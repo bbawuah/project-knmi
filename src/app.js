@@ -6,6 +6,7 @@ import { Paragraph } from '../src/Typography/Paragraph';
 import { Title } from '../src/Typography/Title';
 import { Container } from '../src/Core/Container';
 import { Subtitle } from '../src/Typography/Subtitle';
+import { YearSlider } from './Core/YearSlider';
 
 class App extends React.Component {
   constructor() {
@@ -18,6 +19,7 @@ class App extends React.Component {
         <Title>Title </Title>
         <Subtitle>Subtitle </Subtitle>
         <Paragraph>Paragraph</Paragraph>
+        <YearSlider />
         {/* <SwitchButtons>Amsterdam</SwitchButtons> */}
       </Container>
     );
