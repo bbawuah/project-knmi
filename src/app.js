@@ -1,17 +1,23 @@
 import React from 'react';
-import {render} from 'react-dom';
+import { render } from 'react-dom';
 import 'normalize.css/normalize.css';
-import './styles/styles.scss'
-
+import './styles/styles.scss';
+import { Paragraph } from '../src/Typography/Paragraph';
+import { Title } from '../src/Typography/Title';
 
 class App extends React.Component {
-    constructor(){
-        super()
-    }
+  constructor() {
+    super();
+  }
 
-    render(){
-        return <h1>React boilerplate</h1>
-    }
+  render() {
+    return (
+      <div>
+        <Title>React </Title>
+        <Paragraph>Test</Paragraph>
+      </div>
+    );
+  }
 }
 
-render(<App/>, document.getElementById('app'))
+render(<App />, document.getElementById('app'));
