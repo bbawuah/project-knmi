@@ -2,27 +2,23 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 export const InformationBox = ({ children, backgroundColor }) => {
-  const [color, setColor] = useState();
+  const [addClass, setAddClass] = useState();
 
   useEffect(() => {
     switch (backgroundColor) {
       case 'green':
-        setColor('#003E1F');
+        setAddClass('groen');
         break;
       case 'red':
-        setColor('#BA181B');
+        setAddClass('#BA181B');
         break;
       case 'white':
-        setColor('#FFFFFF');
+        setAddClass('#FFFFFF');
         break;
     }
   }, []);
 
-  return (
-    <article className="info-box" style={{ backgroundColor: color }}>
-      {children}
-    </article>
-  );
+  return <article className={`info-box ${addClass}`}>{children}</article>;
 };
 
 InformationBox.propTypes = {
