@@ -8,6 +8,7 @@ import { Container } from '../src/Core/Container';
 import { Subtitle } from '../src/Typography/Subtitle';
 import { YearSlider } from './Core/YearSlider';
 import { NavButtons } from './Core/NavButtons';
+import { InformationBox } from './Core/InformationBox';
 
 class App extends React.Component {
   constructor() {
@@ -27,6 +28,11 @@ class App extends React.Component {
           <NavButtons>Rome</NavButtons>
           <NavButtons>Shanghai</NavButtons>
         </nav>
+
+        <InformationBox>
+          <Subtitle>Box Subtitle </Subtitle>
+          <Paragraph>Box Paragraph</Paragraph>
+        </InformationBox>
       </Container>
     );
   }
