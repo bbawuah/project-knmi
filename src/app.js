@@ -9,6 +9,7 @@ import { Subtitle } from '../src/Typography/Subtitle';
 import { YearSlider } from './Core/YearSlider';
 import { NavButtons } from './Core/NavButtons';
 import IntroductionPage from './Core/pages/IntroductionPage';
+import FlightsAndCorona from './Core/pages/FlightsAndCorona';
 
 class App extends React.Component {
   constructor() {
@@ -19,6 +20,8 @@ class App extends React.Component {
     return (
       <div>
         <IntroductionPage />
+
+        <FlightsAndCorona />
 
         {/* <Container>
           <Title>Title </Title>
