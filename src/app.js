@@ -29,7 +29,7 @@ class App extends React.Component {
           <NavButtons>Shanghai</NavButtons>
         </nav>
 
-        <InformationBox>
+        <InformationBox backgroundColor="green">
           <Subtitle>Box Subtitle </Subtitle>
           <Paragraph>Box Paragraph</Paragraph>
         </InformationBox>
