@@ -19,7 +19,12 @@ class App extends React.Component {
         <Title>Title </Title>
         <Subtitle>Subtitle </Subtitle>
         <Paragraph>Paragraph</Paragraph>
-        <NavButtons>Amsterdam</NavButtons>
+        <nav>
+          <NavButtons>Amsterdam</NavButtons>
+          <NavButtons>Dubai</NavButtons>
+          <NavButtons>Rome</NavButtons>
+          <NavButtons>Shanghai</NavButtons>
+        </nav>
       </Container>
     );
   }
