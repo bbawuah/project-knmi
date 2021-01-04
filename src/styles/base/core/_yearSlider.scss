@@ -1,9 +1,10 @@
 .slider-container {
-    display: flex;
-    justify-content: space-between;
-    width: 120px;
-    align-items: center;
-    span {
-        font-weight: 700;
-    }
+  display: flex;
+  justify-content: space-between;
+  width: 120px;
+  align-items: center;
+  span {
+    font-weight: 700;
+    padding: 0 1rem;
+  }
 }
