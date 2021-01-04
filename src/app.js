@@ -33,6 +33,16 @@ class App extends React.Component {
           <Subtitle>Box Subtitle </Subtitle>
           <Paragraph>Box Paragraph</Paragraph>
         </InformationBox>
+
+        <InformationBox backgroundColor="red">
+          <Subtitle>Box Subtitle </Subtitle>
+          <Paragraph>Box Paragraph</Paragraph>
+        </InformationBox>
+
+        <InformationBox backgroundColor="white">
+          <Subtitle>Box Subtitle </Subtitle>
+          <Paragraph>Box Paragraph</Paragraph>
+        </InformationBox>
       </Container>
     );
   }

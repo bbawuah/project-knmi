@@ -7,13 +7,13 @@ export const InformationBox = ({ children, backgroundColor }) => {
   useEffect(() => {
     switch (backgroundColor) {
       case 'green':
-        setAddClass('groen');
+        setAddClass('green');
         break;
       case 'red':
-        setAddClass('#BA181B');
+        setAddClass('red');
         break;
       case 'white':
-        setAddClass('#FFFFFF');
+        setAddClass('white');
         break;
     }
   }, []);
