@@ -1,0 +1,13 @@
+.NavButtons {
+  background: $navbutton;
+  border-radius: 0px 0px 8px 8px;
+  border: none;
+  color: $white;
+  width: 13rem;
+  height: 3.5rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $navbuttonHover;
+  }
+}
