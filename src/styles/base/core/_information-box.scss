@@ -1,0 +1,28 @@
+.info-box {
+  padding: 2rem;
+  width: fit-content;
+}
+
+.green {
+  background: #003e1f;
+  h2,
+  p {
+    color: $white;
+  }
+}
+
+.red {
+  background: #ba181b;
+  h2,
+  p {
+    color: $white;
+  }
+}
+
+.white {
+  background: $white;
+  h2,
+  p {
+    color: $black;
+  }
+}
