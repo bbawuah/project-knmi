@@ -5,6 +5,7 @@ import './styles/styles.scss';
 import { Paragraph } from '../src/Typography/Paragraph';
 import { Title } from '../src/Typography/Title';
 import { Container } from '../src/Core/Container';
+import { Subtitle } from '../src/Typography/Subtitle';
 
 class App extends React.Component {
   constructor() {
@@ -14,8 +15,10 @@ class App extends React.Component {
   render() {
     return (
       <Container>
-        <Title>React </Title>
-        <Paragraph>Test</Paragraph>
+        <Title>Title </Title>
+        <Subtitle>Subtitle </Subtitle>
+        <Paragraph>Paragraph</Paragraph>
+        {/* <SwitchButtons>Amsterdam</SwitchButtons> */}
       </Container>
     );
   }
