@@ -8,6 +8,7 @@ import { Container } from '../src/Core/Container';
 import { Subtitle } from '../src/Typography/Subtitle';
 import { YearSlider } from './Core/YearSlider';
 import { NavButtons } from './Core/NavButtons';
+import IntroductionPage from './Core/pages/IntroductionPage';
 
 class App extends React.Component {
   constructor() {
@@ -16,18 +17,22 @@ class App extends React.Component {
 
   render() {
     return (
-      <Container>
-        <Title>Title </Title>
-        <Subtitle>Subtitle </Subtitle>
-        <Paragraph>Paragraph</Paragraph>
-        <YearSlider />
-        <nav>
-          <NavButtons>Amsterdam</NavButtons>
-          <NavButtons>Dubai</NavButtons>
-          <NavButtons>Rome</NavButtons>
-          <NavButtons>Shanghai</NavButtons>
-        </nav>
-      </Container>
+      <div>
+        <IntroductionPage />
+
+        {/* <Container>
+          <Title>Title </Title>
+          <Subtitle>Subtitle </Subtitle>
+          <Paragraph>Paragraph</Paragraph>
+          <YearSlider />
+          <nav>
+            <NavButtons>Amsterdam</NavButtons>
+            <NavButtons>Dubai</NavButtons>
+            <NavButtons>Rome</NavButtons>
+            <NavButtons>Shanghai</NavButtons>
+          </nav>
+        </Container> */}
+      </div>
     );
   }
 }
