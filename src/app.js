@@ -4,6 +4,7 @@ import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 import { Paragraph } from '../src/Typography/Paragraph';
 import { Title } from '../src/Typography/Title';
+import { Container } from '../src/Core/Container';
 import { Subtitle } from '../src/Typography/Subtitle';
 
 class App extends React.Component {
@@ -13,12 +14,12 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <Container>
         <Title>Title </Title>
         <Subtitle>Subtitle </Subtitle>
         <Paragraph>Paragraph</Paragraph>
-        <SwitchButtons>Amsterdam</SwitchButtons>
-      </div>
+        {/* <SwitchButtons>Amsterdam</SwitchButtons> */}
+      </Container>
     );
   }
 }
