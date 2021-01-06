@@ -1,35 +1,49 @@
 import React from 'react';
-import { render } from 'react-dom';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
+import { render } from 'react-dom';
 import { Paragraph } from '../src/Typography/Paragraph';
 import { Title } from '../src/Typography/Title';
 import { Container } from '../src/Core/Container';
 import { Subtitle } from '../src/Typography/Subtitle';
 import { YearSlider } from './Core/YearSlider';
 import { NavButtons } from './Core/NavButtons';
+import { LineChart } from './Core/D3/LineChart';
 
-class App extends React.Component {
-  constructor() {
-    super();
-  }
+function App() {
+  const width = 500,
+    height = 350,
+    margin = 20;
+  const data = [
+    { name: 'Jan', value: 30 },
+    { name: 'Feb', value: 10 },
+    { name: 'Mar', value: 50 },
+    { name: 'Apr', value: 20 },
+    { name: 'May', value: 80 },
+    { name: 'Jun', value: 30 },
+    { name: 'July', value: 0 },
+    { name: 'Aug', value: 20 },
+    { name: 'Sep', value: 100 },
+    { name: 'Oct', value: 55 },
+    { name: 'Nov', value: 60 },
+    { name: 'Dec', value: 80 },
+  ];
 
-  render() {
-    return (
-      <Container>
-        <Title>Title </Title>
-        <Subtitle>Subtitle </Subtitle>
-        <Paragraph>Paragraph</Paragraph>
-        <YearSlider />
-        <nav>
-          <NavButtons>Amsterdam</NavButtons>
-          <NavButtons>Dubai</NavButtons>
-          <NavButtons>Rome</NavButtons>
-          <NavButtons>Shanghai</NavButtons>
-        </nav>
-      </Container>
-    );
-  }
+  return (
+    <Container>
+      <Title>Title </Title>
+      <Subtitle>Subtitle </Subtitle>
+      <Paragraph>Paragraph</Paragraph>
+      <YearSlider />
+      <LineChart data={data} width={width} height={height} margin={margin} />
+      <nav>
+        <NavButtons>Amsterdam</NavButtons>
+        <NavButtons>Dubai</NavButtons>
+        <NavButtons>Rome</NavButtons>
+        <NavButtons>Shanghai</NavButtons>
+      </nav>
+    </Container>
+  );
 }
 
 render(<App />, document.getElementById('app'));
