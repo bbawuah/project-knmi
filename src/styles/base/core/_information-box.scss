@@ -1,14 +1,15 @@
 .info-box {
   padding: 2rem;
   width: fit-content;
-  margin-right: 4rem;
+  margin-right: 2rem;
+  margin-bottom: 1rem;
 
   &.green {
     background: #003e1f;
     h2,
     p {
       color: $white;
-      max-width: 33rem;
+      max-width: 18rem;
     }
   }
 
@@ -17,7 +18,7 @@
     h2,
     p {
       color: $white;
-      max-width: 33rem;
+      max-width: 18rem;
     }
   }
 
@@ -25,14 +26,14 @@
     background: $white;
     h2 {
       color: #f70123;
-      max-width: 33rem;
+      max-width: 18rem;
     }
     p {
       color: $black;
-      max-width: 33rem;
+      max-width: 18rem;
     }
     span {
-      max-width: 33rem;
+      max-width: 18rem;
       color: #f70123;
       font-weight: bold;
     }

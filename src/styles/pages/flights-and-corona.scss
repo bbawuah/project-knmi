@@ -1,9 +1,12 @@
 .flights-and-corona {
   background: #73ba9b;
-  padding: 5rem;
+  padding: 4rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 
   h1 {
-    width: 60rem;
+    max-width: 45rem;
     color: $white;
     padding-bottom: 3rem;
   }
@@ -11,11 +14,25 @@
   p {
     padding-top: 2rem;
     color: $white;
-    width: 65rem;
+    max-width: 45rem;
   }
 
   .information-container {
     display: flex;
-    padding: 6rem 0;
+    flex-wrap: wrap;
+    padding: 4rem 0;
+    justify-content: center;
+  }
+}
+
+.person-container {
+  display: grid;
+  grid-template-columns: repeat(5, 4.3rem);
+  grid-template-rows: max-content;
+  padding-left: 5rem;
+  align-content: center;
+
+  .person-image {
+    width: 2.3rem;
   }
 }

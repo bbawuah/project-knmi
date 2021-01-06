@@ -11,6 +11,7 @@
   flex-direction: column;
   h1 {
     color: $white;
-    width: 55rem;
+    max-width: 57rem;
+    padding: 0 3rem;
   }
 }
