@@ -1,0 +1,21 @@
+.flights-and-corona {
+  background: #73ba9b;
+  padding: 5rem;
+
+  h1 {
+    width: 60rem;
+    color: $white;
+    padding-bottom: 3rem;
+  }
+
+  p {
+    padding-top: 2rem;
+    color: $white;
+    width: 65rem;
+  }
+
+  .information-container {
+    display: flex;
+    padding: 6rem 0;
+  }
+}

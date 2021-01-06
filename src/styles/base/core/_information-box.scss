@@ -1,28 +1,40 @@
 .info-box {
   padding: 2rem;
   width: fit-content;
-}
+  margin-right: 4rem;
 
-.green {
-  background: #003e1f;
-  h2,
-  p {
-    color: $white;
+  &.green {
+    background: #003e1f;
+    h2,
+    p {
+      color: $white;
+      max-width: 33rem;
+    }
   }
-}
 
-.red {
-  background: #ba181b;
-  h2,
-  p {
-    color: $white;
+  &.red {
+    background: #ba181b;
+    h2,
+    p {
+      color: $white;
+      max-width: 33rem;
+    }
   }
-}
 
-.white {
-  background: $white;
-  h2,
-  p {
-    color: $black;
+  &.white {
+    background: $white;
+    h2 {
+      color: #f70123;
+      max-width: 33rem;
+    }
+    p {
+      color: $black;
+      max-width: 33rem;
+    }
+    span {
+      max-width: 33rem;
+      color: #f70123;
+      font-weight: bold;
+    }
   }
 }
