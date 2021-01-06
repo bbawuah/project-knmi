@@ -9,6 +9,9 @@ import { Subtitle } from '../src/Typography/Subtitle';
 import { YearSlider } from './Core/YearSlider';
 import { NavButtons } from './Core/NavButtons';
 import { LineChart } from './Core/D3/LineChart';
+import IntroductionPage from './Core/pages/IntroductionPage';
+import FlightsAndCorona from './Core/pages/FlightsAndCorona';
+import { InformationBox } from './Core/InformationBox';
 
 function App() {
   const width = 500,
@@ -36,6 +39,8 @@ function App() {
       <Paragraph>Paragraph</Paragraph>
       <YearSlider />
       <LineChart data={data} width={width} height={height} margin={margin} />
+      <IntroductionPage />
+      <FlightsAndCorona />
       <nav>
         <NavButtons>Amsterdam</NavButtons>
         <NavButtons>Dubai</NavButtons>

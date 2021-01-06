@@ -1,0 +1,41 @@
+.info-box {
+  padding: 2rem;
+  width: fit-content;
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+
+  &.green {
+    background: #003e1f;
+    h2,
+    p {
+      color: $white;
+      max-width: 18rem;
+    }
+  }
+
+  &.red {
+    background: #ba181b;
+    h2,
+    p {
+      color: $white;
+      max-width: 18rem;
+    }
+  }
+
+  &.white {
+    background: $white;
+    h2 {
+      color: #f70123;
+      max-width: 18rem;
+    }
+    p {
+      color: $black;
+      max-width: 18rem;
+    }
+    span {
+      max-width: 18rem;
+      color: #f70123;
+      font-weight: bold;
+    }
+  }
+}
