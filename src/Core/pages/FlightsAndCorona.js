@@ -2,6 +2,8 @@ import React from 'react';
 import { Paragraph } from '../../../src/Typography/Paragraph';
 import { Title } from '../../../src/Typography/Title';
 import { Container } from '../../../src/Core/Container';
+import { InformationBox } from '../../Core/InformationBox';
+import { Subtitle } from '../../../src/Typography/Subtitle';
 
 function FlightsAndCorona() {
   return (
@@ -19,6 +21,28 @@ function FlightsAndCorona() {
         kijken naar de NO2 uitstoot van steden met een luchthaven. We hebben een
         aantal steden onderzocht.
       </Paragraph>
+
+      <div className="information-container">
+        <InformationBox backgroundColor="white">
+          <Subtitle>2019 </Subtitle>
+          <Paragraph>
+            <span>68.948.849</span> aantal vluchten wereldwijd
+          </Paragraph>
+
+          <Paragraph>
+            Dit zijn gemiddeld <span>188.901</span> vluchten per dag
+          </Paragraph>
+        </InformationBox>
+
+        <InformationBox backgroundColor="white">
+          <Subtitle>2020 </Subtitle>
+          <Paragraph>
+            In <span>april 2020</span> reisden bijna 134 duizend passagiers van
+            en naar de vijf nationale luchthavens,{' '}
+            <span>98 procent minder</span> dan in april 2019
+          </Paragraph>
+        </InformationBox>
+      </div>
     </section>
   );
 }
