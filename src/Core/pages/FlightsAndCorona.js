@@ -8,8 +8,8 @@ import { GreenPersonImage } from '../GreenPersonImage';
 import { Subtitle } from '../../../src/Typography/Subtitle';
 
 function FlightsAndCorona() {
-  const redPersonCount = Array(49).fill(5);
-  const greenPersonCount = Array(1).fill(5);
+  const redPersonCount = Array(49).fill(1);
+  const greenPersonCount = Array(1).fill(2);
   return (
     <section className="flights-and-corona">
       <div>
@@ -53,11 +53,11 @@ function FlightsAndCorona() {
 
       <div className="person-container">
         {redPersonCount.map(() => {
-          return <RedPersonImage />;
+          return <RedPersonImage key={redPersonCount.length} />;
         })}
 
         {greenPersonCount.map(() => {
-          return <GreenPersonImage />;
+          return <GreenPersonImage key={greenPersonCount.length} />;
         })}
       </div>
     </section>
