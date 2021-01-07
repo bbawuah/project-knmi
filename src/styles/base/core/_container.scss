@@ -3,15 +3,18 @@
 
 .introduction-container {
   width: 100%;
-  height: 100vh;
-  background: #73ba9b;
+  height: 98.2vh;
+  background-image: url(/assets/intropagina.svg);
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
+  align-items: flex-start;
   flex-direction: column;
+  background-size: cover;
+  background-position: center;
+  padding-bottom: 7rem;
   h1 {
     color: $white;
-    max-width: 57rem;
+    max-width: 42rem;
     padding: 0 3rem;
   }
 }
