@@ -52,12 +52,12 @@ function FlightsAndCorona() {
       </div>
 
       <div className="person-container">
-        {redPersonCount.map(() => {
-          return <RedPersonImage key={redPersonCount.length} />;
+        {redPersonCount.map((item, index) => {
+          return <RedPersonImage key={index} />;
         })}
 
-        {greenPersonCount.map(() => {
-          return <GreenPersonImage key={greenPersonCount.length} />;
+        {greenPersonCount.map((item, index) => {
+          return <GreenPersonImage key={index} />;
         })}
       </div>
     </section>
