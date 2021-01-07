@@ -1,0 +1,83 @@
+.what-is-no2-container {
+  min-height: 100vh;
+  background-color: #161a1d;
+  padding: 5rem;
+  h1 {
+    padding: 3rem 0;
+    color: $white;
+  }
+
+  .what-is-no2-content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+
+    p {
+      max-width: 28rem;
+      color: $white;
+    }
+
+    .left-section {
+      padding-right: 9rem;
+
+      .no2-img {
+        width: 31rem;
+        padding-top: 2rem;
+      }
+    }
+
+    .right-section {
+      display: flex;
+      flex-direction: column;
+      padding-top: 12rem;
+    }
+
+    .no2-container {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 2rem;
+      align-items: center;
+      article {
+        text-align: center;
+        width: 5rem;
+      }
+      hr {
+        width: 45%;
+      }
+    }
+
+    .o2-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+
+      hr {
+        height: 5rem;
+      }
+      .pb {
+        padding-bottom: 2rem;
+      }
+
+      p {
+        max-width: 22rem;
+      }
+    }
+
+    .chemicals-long {
+      font-family: $title-font;
+      font-size: 1rem;
+    }
+    .chemicals-short {
+      font-family: $paragraph-font;
+      font-size: 3rem;
+      font-weight: 800;
+    }
+    .chemicals-formula {
+      font-family: $paragraph-font;
+      font-size: 1.2rem;
+    }
+  }
+}
