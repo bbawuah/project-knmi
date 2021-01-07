@@ -1,15 +1,15 @@
 import React from 'react';
 import { Paragraph } from '../../../src/Typography/Paragraph';
 import { Title } from '../../../src/Typography/Title';
-import { Container } from '../../../src/Core/Container';
 import { InformationBox } from '../../Core/InformationBox';
 import { RedPersonImage } from '../RedPersonImage';
 import { GreenPersonImage } from '../GreenPersonImage';
 import { Subtitle } from '../../../src/Typography/Subtitle';
 
 function FlightsAndCorona() {
-  const redPersonCount = Array(49).fill(1);
-  const greenPersonCount = Array(1).fill(2);
+  const redPersonCount = Array(49).fill('red');
+  redPersonCount.push('green');
+
   return (
     <section className="flights-and-corona">
       <div>
@@ -53,11 +53,11 @@ function FlightsAndCorona() {
 
       <div className="person-container">
         {redPersonCount.map((item, index) => {
-          return <RedPersonImage key={index} />;
-        })}
-
-        {greenPersonCount.map((item, index) => {
-          return <GreenPersonImage key={index} />;
+          if (item == 'red') {
+            return <RedPersonImage key={index} />;
+          } else {
+            return <GreenPersonImage key={index} />;
+          }
         })}
       </div>
     </section>
