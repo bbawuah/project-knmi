@@ -12,6 +12,7 @@ import IntroductionPage from './Core/pages/IntroductionPage';
 import FlightsAndCorona from './Core/pages/FlightsAndCorona';
 import { InformationBox } from './Core/InformationBox';
 import WhatIsNo2 from './Core/pages/WhatIsNo2';
+import CompareAirportsPage from './Core/pages/CompareAirportsPage';
 
 class App extends React.Component {
   constructor() {
@@ -24,6 +25,7 @@ class App extends React.Component {
         <IntroductionPage />
         <WhatIsNo2 />
         <FlightsAndCorona />
+        <CompareAirportsPage />
 
         {/* <Container>
           <Title>Title </Title>

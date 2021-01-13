@@ -1,0 +1,40 @@
+.compare-page-container {
+  display: flex;
+  justify-content: center;
+}
+
+.compare-page-content {
+  background-color: $white;
+  min-height: 100vh;
+  width: 90rem;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+
+  // remove chart
+  .chart {
+    width: 100%;
+    background-color: lightgray;
+    height: 21rem;
+  }
+
+  .text-section {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 4rem;
+    flex-wrap: wrap;
+  }
+
+  .multiple-charts {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 4rem;
+
+    .placeholder {
+      height: 14rem;
+      width: 18rem;
+      background-color: lightgrey;
+    }
+  }
+}
