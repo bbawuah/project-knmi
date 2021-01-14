@@ -1,9 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react'
 import ee from '@google/earthengine'
 
-const API_KEY = 'AIzaSyCtuQCCmPKAlhr8pDQv7WfwjNgE1qtGIKc'
-
-export const MapContainer = () => {
+export const Map = () => {
   const googleMapRef = useRef()
   const [mapId, setMapId] = useState()
   let map

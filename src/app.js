@@ -13,6 +13,8 @@ import FlightsAndCorona from './Core/pages/FlightsAndCorona'
 import { InformationBox } from './Core/InformationBox'
 import WhatIsNo2 from './Core/pages/WhatIsNo2'
 import CompareAirportsPage from './Core/pages/CompareAirportsPage'
+import { ToggleImage } from './Core/ToggleImage'
+import { MapContainer } from './Core/Map'
 
 const timeStamps = {
   vijftienMaart: ['1584230400', '1584316799'],
