@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react'
 import ee from '@google/earthengine'
 
-export const Map = () => {
+export const Map = ({ coordinates }) => {
   const googleMapRef = useRef()
   useEffect(() => {
     ;(async () => {
@@ -14,14 +14,18 @@ export const Map = () => {
       const json = await data.json()
 
       initialize(json.mapId, googleMapRef)
-      console.log('Running')
     })()
   }, [])
 
+  console.log(coordinates)
+
   const initialize = (mapid, el) => {
-    console.log(window.google)
+    // console.log(window.google)
     const embeddedMap = new window.google.maps.Map(el.current, {
-      center: { lng: 5.1, lat: 52.1 },
+      center: {
+        lng: coordinates.longitude,
+        lat: coordinates.latitude,
+      },
       zoom: 6,
     })
 
@@ -31,13 +35,17 @@ export const Map = () => {
 
     const overlay = new ee.layers.ImageOverlay(tileSource)
     embeddedMap.overlayMapTypes.push(overlay)
+
+    var opacity = 0.5
+    const layer = new ee.addLayer(mapid, null, null, null, opacity)
   }
 
   return (
     <div
+      className="small-map"
       id="google-map"
       ref={googleMapRef}
-      style={{ height: '100vh', width: '100%' }}
+      style={{ height: '100%', width: '100%' }}
     />
   )
 }
