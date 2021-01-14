@@ -12,6 +12,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "@google/earthengine": "^0.1.246",
     "css-loader": "^3.4.2",
     "live-server": "^1.2.1",
     "node-sass": "^4.13.1",
