@@ -1,3 +1,4 @@
+import 'regenerator-runtime/runtime'
 import React from 'react'
 import { render } from 'react-dom'
 import 'normalize.css/normalize.css'
@@ -14,7 +15,7 @@ import { InformationBox } from './Core/InformationBox'
 import WhatIsNo2 from './Core/pages/WhatIsNo2'
 import CompareAirportsPage from './Core/pages/CompareAirportsPage'
 import { ToggleImage } from './Core/ToggleImage'
-import { MapContainer } from './Core/Map'
+import { Map } from './Core/Map'
 
 const timeStamps = {
   vijftienMaart: ['1584230400', '1584316799'],
@@ -28,7 +29,7 @@ const App = () => {
       <FlightsAndCorona />
       <CompareAirportsPage />
       <ToggleImage foto1="foto1.jpeg" foto2="foto2.jpeg" />
-      <MapContainer />
+      <Map />
     </div>
   )
 }
