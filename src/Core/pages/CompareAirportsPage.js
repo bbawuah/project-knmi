@@ -1,8 +1,10 @@
-import React from 'react';
-import { Title } from '../../../src/Typography/Title';
-import { Subtitle } from '../../../src/Typography/Subtitle';
-import { Paragraph } from '../../Typography/Paragraph';
-import { InformationBox } from '../InformationBox';
+import React from 'react'
+import { Title } from '../../../src/Typography/Title'
+import { Subtitle } from '../../../src/Typography/Subtitle'
+import { Paragraph } from '../../Typography/Paragraph'
+import { InformationBox } from '../InformationBox'
+import { Map } from '../Map'
+import coordinates from './../../../public/assets/coordinates.json'
 
 function CompareAirportsPage() {
   return (
@@ -43,26 +45,18 @@ function CompareAirportsPage() {
         </section>
 
         <section className="multiple-charts">
-          <div>
-            <p>Amsterdam</p>
-            <div className="placeholder"></div>
-          </div>
-          <div>
-            <p>Amsterdam</p>
-            <div className="placeholder"></div>
-          </div>
-          <div>
-            <p>Amsterdam</p>
-            <div className="placeholder"></div>
-          </div>
-          <div>
-            <p>Amsterdam</p>
-            <div className="placeholder"></div>
-          </div>
+          {coordinates.airports.map((item, index) => {
+            return (
+              <div key={index} className="map-container">
+                <p>{item.city}</p>
+                <Map coordinates={item} />
+              </div>
+            )
+          })}
         </section>
       </section>
     </section>
-  );
+  )
 }
 
-export default CompareAirportsPage;
+export default CompareAirportsPage

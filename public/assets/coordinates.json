@@ -1,0 +1,24 @@
+{
+  "airports": [
+    {
+      "city": "london",
+      "latitude": 51.46975597655619,
+      "longitude": -0.4543032323432911
+    },
+    {
+      "city": "amsterdam",
+      "latitude": 52.31128253007927,
+      "longitude": 4.775994499801224
+    },
+    {
+      "city": "rome",
+      "latitude": 41.800220326222316,
+      "longitude": 12.246259242605285
+    },
+    {
+      "city": "madrid",
+      "latitude": 40.49888623359332,
+      "longitude": -3.565251506386586
+    }
+  ]
+}
