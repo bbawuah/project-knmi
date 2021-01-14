@@ -3,8 +3,6 @@ import ee from '@google/earthengine'
 
 export const Map = () => {
   const googleMapRef = useRef()
-  const [mapId, setMapId] = useState()
-  let map
   useEffect(() => {
     ;(async () => {
       const data = await fetch('http://localhost:3000/mapId', {
@@ -14,9 +12,9 @@ export const Map = () => {
         },
       })
       const json = await data.json()
-      setMapId(json.mapId)
 
-      initialize(mapId, googleMapRef)
+      initialize(json.mapId, googleMapRef)
+      console.log('Running')
     })()
   }, [])
 
@@ -26,8 +24,6 @@ export const Map = () => {
       center: { lng: 5.1, lat: 52.1 },
       zoom: 6,
     })
-
-    console.log('test')
 
     const tileSource = new ee.layers.EarthEngineTileSource({
       mapid,
