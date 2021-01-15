@@ -1,10 +1,10 @@
 import React from 'react'
-import { Title } from '../../../src/Typography/Title'
 import { Subtitle } from '../../../src/Typography/Subtitle'
 import { Paragraph } from '../../Typography/Paragraph'
 import { InformationBox } from '../InformationBox'
 import { Trail } from '../Animations/Trail'
 import { VisibilitySensor } from '../VisibilitySensor'
+import { Map } from '../Map'
 
 function CompareAirportsPage() {
   return (
