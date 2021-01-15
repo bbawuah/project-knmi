@@ -1,7 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'
+import PropTypes from 'prop-types'
 
-export function RedPersonImage() {
-  return <img className="person-image" src="./assets/darkred-icon.png"></img>;
+export function RedPersonImage({ styling }) {
+  return (
+    <img
+      className="person-image"
+      src="./assets/darkred-icon.png"
+      style={styling}
+    ></img>
+  )
 }
 
-export default RedPersonImage;
+RedPersonImage.propTypes = {
+  styling: PropTypes.object.isRequired,
+}
+
+export default RedPersonImage

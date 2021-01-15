@@ -1,18 +1,16 @@
-import React from 'react';
-import { Paragraph } from '../../../src/Typography/Paragraph';
-import { Title } from '../../../src/Typography/Title';
-import { Container } from '../../../src/Core/Container';
+import React from 'react'
+import { Trail } from '../Animations/Trail'
 
 function IntroductionPage() {
   return (
     <section className="introduction-container">
-      <Title>
-        Hoe een <span className="text-color-red">virus </span>de lucht
-        <span className="text-color-green"> schoner </span>
-        maakt
-      </Title>
+      <Trail
+        isVisible={true}
+        title="Hoe een virus de lucht schoner maakt"
+        color="#fff"
+      />
     </section>
-  );
+  )
 }
 
-export default IntroductionPage;
+export default IntroductionPage
