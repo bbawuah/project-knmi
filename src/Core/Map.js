@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react'
 import ee from '@google/earthengine'
+import PropTypes from 'prop-types'
 
 export const Map = ({ coordinates }) => {
   const googleMapRef = useRef()
