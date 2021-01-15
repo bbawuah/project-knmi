@@ -1,20 +1,34 @@
-import React from 'react';
-import { Title } from '../../Typography/Title';
-import { Paragraph } from '../../Typography/Paragraph';
-import { Subtitle } from '../../Typography/Subtitle';
+import React, { Fragment } from 'react'
+import { Title } from '../../Typography/Title'
+import { Paragraph } from '../../Typography/Paragraph'
+import { Subtitle } from '../../Typography/Subtitle'
+import { Trail } from '../Animations/Trail'
+import { VisibilitySensor } from '../VisibilitySensor'
 
 function WhatIsNo2() {
   return (
     <section className="what-is-no2-container">
       <div className="what-is-no2-content">
         <div className="left-section">
-          <Title>Wat is NO2?</Title>
-          <Paragraph>
-            NO2 (stikstofdioxide) is een gas dat ontstaat bij allerlei
-            verbrandingsprocessen op hele hoge temperaturen bijvoorbeeld bij
-            motoren van auto’s, vliegtuigen en in fabrieken.
-          </Paragraph>
-          <img className="no2-img" src="./assets/watisno2.svg"></img>
+          <VisibilitySensor once partialVisibility>
+            {({ isVisible }) => {
+              return (
+                <Fragment>
+                  <Trail
+                    title="Wat is NO2?"
+                    color="#fff"
+                    isVisible={isVisible}
+                  />
+                  <Paragraph>
+                    NO2 (stikstofdioxide) is een gas dat ontstaat bij allerlei
+                    verbrandingsprocessen op hele hoge temperaturen bijvoorbeeld
+                    bij motoren van auto’s, vliegtuigen en in fabrieken.
+                  </Paragraph>
+                  <img className="no2-img" src="./assets/watisno2.svg"></img>
+                </Fragment>
+              )
+            }}
+          </VisibilitySensor>
         </div>
         <div className="right-section">
           <Paragraph>
@@ -48,7 +62,7 @@ function WhatIsNo2() {
         </div>
       </div>
     </section>
-  );
+  )
 }
 
-export default WhatIsNo2;
+export default WhatIsNo2
