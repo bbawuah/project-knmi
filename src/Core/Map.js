@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react'
 import ee from '@google/earthengine'
 
+// Fix date
+
 export const Map = () => {
   const googleMapRef = useRef()
   useEffect(() => {

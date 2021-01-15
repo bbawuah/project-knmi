@@ -1,17 +1,29 @@
-import React from 'react';
-import { Title } from '../../../src/Typography/Title';
-import { Subtitle } from '../../../src/Typography/Subtitle';
-import { Paragraph } from '../../Typography/Paragraph';
-import { InformationBox } from '../InformationBox';
+import React from 'react'
+import { Title } from '../../../src/Typography/Title'
+import { Subtitle } from '../../../src/Typography/Subtitle'
+import { Paragraph } from '../../Typography/Paragraph'
+import { InformationBox } from '../InformationBox'
+import { Trail } from '../Animations/Trail'
+import { VisibilitySensor } from '../VisibilitySensor'
 
 function CompareAirportsPage() {
   return (
     <section className="compare-page-container">
       <section className="compare-page-content">
-        <div className="title">
-          <Title>VERGELIJKEN VAN DE LUCHTHAVENS</Title>
-          <Subtitle>2019 & 2020</Subtitle>
-        </div>
+        <VisibilitySensor once partialVisibility>
+          {({ isVisible }) => {
+            return (
+              <div className="title">
+                <Trail
+                  title="Vergelijken van de luchthaven"
+                  color="#000"
+                  isVisible={isVisible}
+                />
+                <Subtitle>2019 & 2020</Subtitle>
+              </div>
+            )
+          }}
+        </VisibilitySensor>
         <div className="text-section">
           <div>
             <Paragraph>
@@ -24,7 +36,6 @@ function CompareAirportsPage() {
               en ze door elkaar husselde om een font-catalogus.
             </Paragraph>
           </div>
-
           <InformationBox backgroundColor="red">
             <Subtitle>TITLE</Subtitle>
             <Paragraph>
@@ -62,7 +73,7 @@ function CompareAirportsPage() {
         </section>
       </section>
     </section>
-  );
+  )
 }
 
-export default CompareAirportsPage;
+export default CompareAirportsPage
