@@ -9,8 +9,8 @@ import { Trail } from '../Animations/Trail'
 import { VisibilitySensor } from '../VisibilitySensor'
 
 function FlightsAndCorona() {
-  const redPersonCount = Array(49).fill('red')
-  redPersonCount.push('green')
+  const redPersonCount = Array(49).fill('green')
+  redPersonCount.push('red')
 
   return (
     <section className="flights-and-corona">
@@ -73,7 +73,7 @@ function FlightsAndCorona() {
           return (
             <div className="person-container">
               {redPersonCount.map((item, index) => {
-                if (item == 'red') {
+                if (item == 'green') {
                   return (
                     <Spring
                       key={index}
@@ -85,7 +85,7 @@ function FlightsAndCorona() {
                           : 'translateY(100px)',
                       }}
                     >
-                      {(props) => <RedPersonImage styling={{ ...props }} />}
+                      {(props) => <GreenPersonImage styling={{ ...props }} />}
                     </Spring>
                   )
                 } else {
@@ -100,7 +100,7 @@ function FlightsAndCorona() {
                           : 'translateY(100px)',
                       }}
                     >
-                      {(props) => <GreenPersonImage styling={{ ...props }} />}
+                      {(props) => <RedPersonImage styling={{ ...props }} />}
                     </Spring>
                   )
                 }
