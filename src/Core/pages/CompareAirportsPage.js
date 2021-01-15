@@ -54,22 +54,14 @@ function CompareAirportsPage() {
         </section>
 
         <section className="multiple-charts">
-          <div>
-            <p>Amsterdam</p>
-            <div className="placeholder"></div>
-          </div>
-          <div>
-            <p>Amsterdam</p>
-            <div className="placeholder"></div>
-          </div>
-          <div>
-            <p>Amsterdam</p>
-            <div className="placeholder"></div>
-          </div>
-          <div>
-            <p>Amsterdam</p>
-            <div className="placeholder"></div>
-          </div>
+          {coordinates.airports.map((item, index) => {
+            return (
+              <div key={index} className="map-container">
+                <p>{item.city}</p>
+                <Map coordinates={item} />
+              </div>
+            )
+          })}
         </section>
       </section>
     </section>
