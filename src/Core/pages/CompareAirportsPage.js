@@ -4,7 +4,6 @@ import { Paragraph } from '../../Typography/Paragraph'
 import { InformationBox } from '../InformationBox'
 import { Trail } from '../Animations/Trail'
 import { VisibilitySensor } from '../VisibilitySensor'
-import { Map } from '../Map'
 
 function CompareAirportsPage() {
   return (
@@ -54,14 +53,22 @@ function CompareAirportsPage() {
         </section>
 
         <section className="multiple-charts">
-          {coordinates.airports.map((item, index) => {
-            return (
-              <div key={index} className="map-container">
-                <p>{item.city}</p>
-                <Map coordinates={item} />
-              </div>
-            )
-          })}
+          <div>
+            <p>Amsterdam</p>
+            <div className="placeholder"></div>
+          </div>
+          <div>
+            <p>Amsterdam</p>
+            <div className="placeholder"></div>
+          </div>
+          <div>
+            <p>Amsterdam</p>
+            <div className="placeholder"></div>
+          </div>
+          <div>
+            <p>Amsterdam</p>
+            <div className="placeholder"></div>
+          </div>
         </section>
       </section>
     </section>

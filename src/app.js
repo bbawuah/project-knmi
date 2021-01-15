@@ -22,7 +22,7 @@ const App = () => {
       <WhatIsEffect />
       <FlightsAndCorona />
       <CompareAirportsPage />
-      <Map />
+      {/* <Map /> */}
     </div>
   )
 }
