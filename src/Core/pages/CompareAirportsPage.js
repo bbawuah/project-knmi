@@ -6,8 +6,13 @@ import { Trail } from '../Animations/Trail'
 import { VisibilitySensor } from '../VisibilitySensor'
 import { Map } from '../Map'
 import coordinates from './../../../public/assets/coordinates.json'
+import { LineChart } from '../D3/LineChart'
 
 function CompareAirportsPage() {
+  const width = 700,
+    height = 500,
+    margin = 20
+  const data = [25, 34, 56, 65]
   return (
     <section className="compare-page-container">
       <section className="compare-page-content">
@@ -51,6 +56,7 @@ function CompareAirportsPage() {
 
         <section className="compare-chart">
           <h3>Luchtverkeer tijdens de lockdown</h3>
+          <LineChart width={width} height={height} margin={margin} />
           <div className="chart"></div>
         </section>
 
