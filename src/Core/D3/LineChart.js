@@ -45,8 +45,8 @@ export const LineChart = ({ width, height }) => {
 
     tooltipLine
       .attr('stroke', 'lightgray')
-      .attr('x1', xScale(3))
-      .attr('x2', xScale(3))
+      .attr('x1', xScale(4))
+      .attr('x2', xScale(4))
       .attr('y1', 0)
       .attr('y2', height - 20)
 

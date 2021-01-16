@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Spring } from 'react-spring/renderprops.cjs'
-import { Title } from '../../../src/Typography/Title'
+import { TextContainer } from '../TextContainer'
 import { Paragraph } from '../../../src/Typography/Paragraph'
 import { Trail } from '../Animations/Trail'
 import { VisibilitySensor } from '../VisibilitySensor'
@@ -65,54 +65,57 @@ const EffectTextContainer = ({ children, number, styling }) => {
 export const WhatIsEffect = () => {
   return (
     <section className="what-is-effect-container">
-      <VisibilitySensor once partialVisibility>
-        {({ isVisible }) => {
-          return (
-            <div className="what-is-effect-header-container">
-              <Trail
-                isVisible={isVisible}
-                title="Wat is het effect van NO2?"
-                color="#f70123"
-              />
-              <Paragraph className="what-is-effect-subtitle">
-                Een lucht vervuild door NO2 heeft veel effect op de natuur en de
-                gezondheid van mensen.{' '}
-              </Paragraph>
-            </div>
-          )
-        }}
-      </VisibilitySensor>
-      <div className="what-is-effect-content-container">
-        {effecten.map((item, index) => {
-          return (
-            <VisibilitySensor once partialVisibility key={index}>
-              {({ isVisible }) => {
-                return (
-                  <Spring
-                    delay={110}
-                    to={{
-                      opacity: isVisible ? 1 : 0,
-                      transform: isVisible
-                        ? 'translateY(0)'
-                        : 'translateY(100px)',
-                    }}
-                  >
-                    {(props) => (
-                      <EffectTextContainer
-                        number={index}
-                        styling={{ ...props }}
-                      >
-                        <h3>{item.title}</h3>
-                        <Paragraph>{item.text}</Paragraph>
-                      </EffectTextContainer>
-                    )}
-                  </Spring>
-                )
-              }}
-            </VisibilitySensor>
-          )
-        })}
-      </div>
+      <TextContainer>
+        <VisibilitySensor once partialVisibility>
+          {({ isVisible }) => {
+            return (
+              <div className="what-is-effect-header-container">
+                <Trail
+                  isVisible={isVisible}
+                  title="Wat is het effect van NO2?"
+                  color="#f70123"
+                />
+                <Paragraph className="what-is-effect-subtitle">
+                  Een lucht vervuild door NO2 heeft veel effect op de natuur en
+                  de gezondheid van mensen.{' '}
+                </Paragraph>
+              </div>
+            )
+          }}
+        </VisibilitySensor>
+        <VisibilitySensor once partialVisibility>
+          {({ isVisible }) => {
+            return (
+              <div className="what-is-effect-content-container">
+                {effecten.map((item, index) => {
+                  return (
+                    <Spring
+                      key={index}
+                      delay={110 * index}
+                      to={{
+                        opacity: isVisible ? 1 : 0,
+                        transform: isVisible
+                          ? 'translateY(0)'
+                          : 'translateY(100px)',
+                      }}
+                    >
+                      {(props) => (
+                        <EffectTextContainer
+                          number={index}
+                          styling={{ ...props }}
+                        >
+                          <h3>{item.title}</h3>
+                          <Paragraph>{item.text}</Paragraph>
+                        </EffectTextContainer>
+                      )}
+                    </Spring>
+                  )
+                })}
+              </div>
+            )
+          }}
+        </VisibilitySensor>
+      </TextContainer>
     </section>
   )
 }
