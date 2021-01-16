@@ -20,6 +20,7 @@
     }
 
     .wat-is-effect-text-container {
+        padding: 1rem 2rem;
         position: absolute;
         display: flex;
         flex-direction: column;
@@ -56,8 +57,8 @@
     }
 
     #wat-is-effect-text-container-4 {
-        top: 280px;
-        left: 700px;
+        top: 260px;
+        left: 40%;
     }
 
     #wat-is-effect-text-container-5 {
@@ -81,19 +82,15 @@
     }
 
     .what-is-effect-content-container {
-        background-image:  url(/assets/wat-is-het-effect.svg);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 916px 682px;
         min-height: 800px;
         position: relative;
     }
 
     .what-is-effect-illustration {
         position:absolute;
-        top: 60%;
+        top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 700px;
+        width: 50%;
     }
 }

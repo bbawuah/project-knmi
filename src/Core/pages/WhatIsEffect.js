@@ -87,6 +87,10 @@ export const WhatIsEffect = () => {
           {({ isVisible }) => {
             return (
               <div className="what-is-effect-content-container">
+                <img
+                  className="what-is-effect-illustration"
+                  src="./assets/wat-is-het-effect.svg"
+                ></img>
                 {effecten.map((item, index) => {
                   return (
                     <Spring
