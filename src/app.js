@@ -10,6 +10,16 @@ import CompareAirportsPage from './Core/pages/CompareAirportsPage'
 import { WhatIsEffect } from './Core/pages/WhatIsEffect'
 import { Map } from './Core/Map'
 
+/*
+  const data = [
+      {
+          year: 2019,
+          value: 41892,
+      }, {
+          year: '2020',
+          value: 4242
+      }]
+*/
 const timeStamps = {
   vijftienMaart: ['1584230400', '1584316799'],
 }

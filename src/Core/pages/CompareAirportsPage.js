@@ -8,6 +8,7 @@ import { Map } from '../Map'
 import { TextContainer } from '../TextContainer'
 import coordinates from './../../../public/assets/coordinates.json'
 import { LineChart } from '../D3/LineChart'
+import { BarChart } from '../D3/BarChart'
 
 function CompareAirportsPage() {
   const width = 700,
@@ -59,6 +60,7 @@ function CompareAirportsPage() {
           <section className="compare-chart">
             <h3>Luchtverkeer tijdens de lockdown</h3>
             <LineChart width={width} height={height} margin={margin} />
+            <BarChart width={width} height={height} margin={margin} />
             <div className="chart"></div>
           </section>
 
