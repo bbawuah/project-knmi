@@ -6,7 +6,7 @@
       display: flex;
       flex-direction: column;
       position: absolute;
-      right: 0px;
+      right: 50px;
       width: 150px;
       li {
         display: flex;
@@ -37,9 +37,8 @@
     }
     .x-axis-label {
       position: absolute;
-      top: 100px;
+      left: 80px;
       width: max-content;
-      transform: rotate(-90deg);
     }
     .line-chart {
       path {

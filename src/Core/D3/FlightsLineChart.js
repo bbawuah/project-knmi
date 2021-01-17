@@ -9,41 +9,22 @@ import {
   axisBottom,
   scaleOrdinal,
   schemeCategory10,
-  easeLinear,
 } from 'd3'
+import airportData from '../../airportdata.json'
 
 export const FlightsLineChart = () => {
   const svgRef = useRef()
-  const months = ['Jan', 'Feb', 'Mrt', 'Apr', 'Mei', 'Jun', 'Jul']
-
-  const cities = [
-    {
-      city: 'amsterdam',
-      data: [25, 30, 45, 60, 20, 65, 75],
-    },
-    {
-      city: 'london',
-      data: [0, 90, 20, 40, 83, 30, 85],
-    },
-    {
-      city: 'rome',
-      data: [90, 64, 20, 33, 75, 10, 45],
-    },
-    {
-      city: 'madrid',
-      data: [66, 34, 25, 86, 65, 94, 43],
-    },
-  ]
-  const width = 700,
+  const months = ['Jan', 'Feb', 'Mrt', 'Apr', 'Mei', 'Jun']
+  const width = 900,
     height = 500
   useEffect(() => {
     const svg = select(svgRef.current)
 
     const xScale = scaleLinear()
-      .domain([0, 6])
+      .domain([0, 5])
       .range([0, width - 100])
 
-    const yScale = scaleLinear().domain([0, 150]).range([height, 0])
+    const yScale = scaleLinear().domain([0, 50000]).range([height, 0])
 
     const xAxis = axisBottom(xScale)
       .ticks(months.length)
@@ -65,19 +46,19 @@ export const FlightsLineChart = () => {
     const tooltipLine = svg.append('line').style('stroke-dasharray', '7, 7')
 
     const color = scaleOrdinal(schemeCategory10)
-      .domain(cities.map(({ city }) => city))
+      .domain(airportData.map(({ city }) => city))
       .range(['#F70123', '#003E1F', '#1535DB', '#F79501'])
 
     svg
       .selectAll('.line')
-      .data(cities)
+      .data(airportData)
       .join('path')
       .attr('class', 'line')
       .attr('d', (value) => myLine(value.data))
       .attr('fill', 'none')
       .attr('stroke', (value) => color(value.city))
-      .style('transform', 'translate(150px, -20px)')
-  }, [cities])
+      .style('transform', 'translate(50px, -20px)')
+  }, [airportData])
 
   return (
     <div className="flights-line-chart-container">
@@ -99,9 +80,9 @@ export const FlightsLineChart = () => {
           <span>Madrid</span>
         </li>
       </ul>
-      <p className="x-axis-label">Aantal vliegbewegingen</p>
+      <p className="x-axis-label">Aantal vliegbewegingen 2020</p>
       <svg ref={svgRef} className="line-chart" width={width} height={height}>
-        <g className="container" transform={`translate(${150}, ${-20})`}>
+        <g className="container" transform={`translate(${50}, ${-20})`}>
           <g className="x-axis" />
           <g className="y-axis" />
         </g>
@@ -112,5 +93,4 @@ export const FlightsLineChart = () => {
 
 FlightsLineChart.propTypes = {
   data: PropTypes.array,
-  margin: PropTypes.number.isRequired,
 }

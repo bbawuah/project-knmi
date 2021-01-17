@@ -14,25 +14,30 @@ import {
 
 export const NO2LineChart = () => {
   const svgRef = useRef()
-  const months = ['Jan', 'Feb', 'Mrt', 'Apr', 'Mei', 'Jun', 'Jul']
+  const months = ['Jan', 'Feb', 'Mrt', 'Apr', 'Mei', 'Jun']
 
-  const cities = [
-    {
-      year: 'post covid',
-      data: [25, 30, 45, 60, 20, 65, 75],
-    },
-    {
-      year: 'covid',
-      data: [0, 50, 20, 90, 50, 20, 50],
-    },
-  ]
+  const cities = {
+    measures: ['Maatregelen'],
+    dateOfMeasures: '3 Februari',
+    data: [
+      {
+        year: 'post covid',
+        value: [25, 30, 45, 60, 20, 65],
+      },
+      {
+        year: 'covid',
+        value: [0, 50, 20, 90, 50, 20],
+      },
+    ],
+  }
+
   const width = 700,
     height = 500
   useEffect(() => {
     const svg = select(svgRef.current)
 
     const xScale = scaleLinear()
-      .domain([0, 6])
+      .domain([0, 5])
       .range([0, width - 100])
 
     const yScale = scaleLinear().domain([0, 150]).range([height, 0])
@@ -57,7 +62,7 @@ export const NO2LineChart = () => {
     const tooltipLine = svg.append('line').style('stroke-dasharray', '7, 7')
 
     const color = scaleOrdinal(schemeCategory10)
-      .domain(cities.map((city) => city.year))
+      .domain(cities.data.map((city) => city.year))
       .range(['#F70123', '#003E1F'])
 
     /* 
@@ -73,8 +78,8 @@ export const NO2LineChart = () => {
       */
     tooltipLine
       .attr('stroke', 'lightgray')
-      .attr('x1', xScale(1.5))
-      .attr('x2', xScale(1.5))
+      .attr('x1', xScale(1) + 50)
+      .attr('x2', xScale(1) + 50)
       .attr('y1', 50)
       .attr('y2', height - 20)
 
@@ -82,7 +87,7 @@ export const NO2LineChart = () => {
       .append('text')
       .attr('y', 60) //magic number here
       .attr('x', function () {
-        return xScale(1.6)
+        return xScale(1.1) + 50
       })
       .attr('text-anchor', 'begin')
       .attr('class', 'test')
@@ -90,10 +95,10 @@ export const NO2LineChart = () => {
 
     svg
       .selectAll('.line')
-      .data([cities[0], cities[1]])
+      .data([cities.data[0], cities.data[1]])
       .join('path')
       .attr('class', 'line')
-      .attr('d', (value) => myLine(value.data))
+      .attr('d', ({ value }) => myLine(value))
       .attr('fill', 'none')
       .attr('stroke', (value) => color(value.year))
       .style('transform', 'translate(50px, -20px)')
@@ -122,5 +127,4 @@ export const NO2LineChart = () => {
 
 NO2LineChart.propTypes = {
   data: PropTypes.array,
-  margin: PropTypes.number.isRequired,
 }
