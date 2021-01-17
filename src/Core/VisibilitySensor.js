@@ -19,9 +19,7 @@ export class VisibilitySensor extends Component {
       <VSensor
         active={active}
         onChange={(isVisible) =>
-          once &&
-          isVisible &&
-          this.setState({ active: false }, () => console.log('Brian was here'))
+          once && isVisible && this.setState({ active: false })
         }
         {...theRest}
       />

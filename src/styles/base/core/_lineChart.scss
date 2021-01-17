@@ -1,10 +1,35 @@
-.line-chart {
-    background: #eee;
-  
-  path {
-    stroke: steelblue;
-    stroke-width: 2px;
-    fill: none;
+.line-chart-container {
+  position: relative;
+  width: max-content;
+  font-family: 'Raleway', sans-serif;
+  .legenda {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 50px;
+    width: 100px;
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 80px;
+    }
+    li:first-of-type > div{
+      width: 30px;
+      height:2px;
+      background-color: #F70123;
+    }
+    li:last-of-type > div{
+      width: 30px;
+      height:2px;
+      background-color: #003E1F;
+    }
   }
-  
+  .line-chart {
+    path {
+      stroke-width: 2px;
+    }
+
+    
+  }
 }

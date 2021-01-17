@@ -18,7 +18,7 @@ export const Map = ({ coordinates }) => {
     })()
   }, [])
 
-  console.log(coordinates)
+  // console.log(coordinates)
 
   const initialize = (mapid, el) => {
     // console.log(window.google)

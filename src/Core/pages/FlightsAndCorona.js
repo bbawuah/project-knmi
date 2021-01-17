@@ -17,7 +17,6 @@ function FlightsAndCorona() {
       <div>
         <VisibilitySensor once partialVisibility>
           {({ isVisible }) => {
-            console.log(isVisible)
             return (
               <Fragment>
                 <Trail
@@ -69,7 +68,6 @@ function FlightsAndCorona() {
 
       <VisibilitySensor once partialVisibility>
         {({ isVisible }) => {
-          console.log(`isVisible ${isVisible}`)
           return (
             <div className="person-container">
               {redPersonCount.map((item, index) => {

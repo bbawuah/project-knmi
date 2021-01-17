@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 
 export const Trail = ({ isVisible, title, color }) => {
   const items = title.split(' ')
-  console.log(isVisible)
   const trail = useTrail(items.length, {
     config: { mass: 5, tension: 2000, friction: 200 },
     opacity: isVisible ? 1 : 0,
