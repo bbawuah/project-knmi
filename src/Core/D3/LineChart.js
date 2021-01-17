@@ -109,6 +109,7 @@ export const LineChart = () => {
           <div></div>2020
         </li>
       </ul>
+      <p className="x-axis-label">NO2</p>
       <svg ref={svgRef} className="line-chart" width={width} height={height}>
         <g className="container" transform={`translate(${50}, ${-20})`}>
           <g className="x-axis" />

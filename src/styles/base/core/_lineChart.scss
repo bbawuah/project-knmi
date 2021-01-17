@@ -25,6 +25,12 @@
       background-color: #003E1F;
     }
   }
+  .x-axis-label {
+    position: absolute;
+    top: 40px;
+    width: max-content;
+    transform: rotate(-90deg);
+  }
   .line-chart {
     path {
       stroke-width: 2px;
