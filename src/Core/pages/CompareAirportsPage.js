@@ -7,7 +7,6 @@ import { VisibilitySensor } from '../VisibilitySensor'
 import { Map } from '../Map'
 import { TextContainer } from '../TextContainer'
 import coordinates from './../../../public/assets/coordinates.json'
-import { NO2LineChart } from '../D3/No2LineChart'
 import { FlightsLineChart } from '../D3/FlightsLineChart'
 import { BarChart } from '../D3/BarChart'
 
@@ -18,66 +17,64 @@ function CompareAirportsPage() {
   const data = [25, 34, 56, 65]
   return (
     <section className="compare-page-container">
-      <TextContainer>
-        <section className="compare-page-content">
-          <VisibilitySensor once partialVisibility>
-            {({ isVisible }) => {
-              return (
-                <div className="title">
-                  <Trail
-                    title="Vergelijken van de luchthaven"
-                    color="#000"
-                    isVisible={isVisible}
-                  />
-                  <Subtitle>2019 & 2020</Subtitle>
-                </div>
-              )
-            }}
-          </VisibilitySensor>
-          <div className="text-section">
-            <div>
-              <Paragraph>
-                Lorem Ipsum is slechts een proeftekst uit het drukkerij- en
-                zetterijwezen. Lorem Ipsum is de standaard proeftekst in deze
-                bedrijfstak sinds de 16e eeuw, toen een onbekende drukker een
-                zethaak met letters nam en ze door elkaar husselde om een
-                font-catalogus te maken. Het heeft niet alleen vijf eeuwen
-                overleefT. toen een onbekende drukker een zethaak met letters
-                nam en ze door elkaar husselde om een font-catalogus.
-              </Paragraph>
-            </div>
-            <InformationBox backgroundColor="red">
-              <Subtitle>TITLE</Subtitle>
-              <Paragraph>
-                De Vliegtuigbewegingen van Schiphol zijn in 2020 met 89,9%
-                gedaald ten opzichte van 2019
-              </Paragraph>
-
-              <Paragraph>2019: 41.892</Paragraph>
-              <Paragraph>2020: 4.242</Paragraph>
-            </InformationBox>
+      <section className="compare-page-content">
+        <VisibilitySensor once partialVisibility>
+          {({ isVisible }) => {
+            return (
+              <div className="title">
+                <Trail
+                  title="Vergelijken van de luchthaven"
+                  color="#000"
+                  isVisible={isVisible}
+                />
+                <Subtitle>2019 & 2020</Subtitle>
+              </div>
+            )
+          }}
+        </VisibilitySensor>
+        <div className="text-section">
+          <div>
+            <Paragraph>
+              Hebben de luchthavens nou echt zo veel impact op het NO2 gehalte
+              in de lucht? Om deze vraag te beantwoorden gaan we kijken naar 4
+              grote luchthavens in Europa. Door de Corona pandemie is het
+              luchtverkeer in veel landen zwaar gedaald. Met behulp van deze
+              daling kunnen wij de NO2 waardes voor en na de daling in het
+              luchtverkeer bekijken. De door ons gekozen luchthavens komen
+              allemaal uit verschillende landen en hebben dus ook te maken met
+              verschillende Corona maatregelen. Ben jij ook zo benieuwd wat hier
+              uitkomt? Lees dan snel verder!
+            </Paragraph>
           </div>
+          <InformationBox backgroundColor="red">
+            <Subtitle>TITLE</Subtitle>
+            <Paragraph>
+              De Vliegtuigbewegingen van Schiphol zijn in 2020 met 89,9% gedaald
+              ten opzichte van 2019
+            </Paragraph>
 
-          <section className="compare-chart">
-            <h3>Luchtverkeer tijdens de lockdown</h3>
-            <FlightsLineChart />
-            <NO2LineChart />
-            <BarChart />
-            <div className="chart"></div>
-          </section>
+            <Paragraph>2019: 41.892</Paragraph>
+            <Paragraph>2020: 4.242</Paragraph>
+          </InformationBox>
+        </div>
 
-          <section className="multiple-charts">
-            {coordinates.airports.map((item, index) => {
-              return (
-                <div key={index} className="map-container">
-                  <p>{item.city}</p>
-                  <Map coordinates={item} />
-                </div>
-              )
-            })}
-          </section>
+        <section className="compare-chart">
+          <h3>Luchtverkeer tijdens de lockdown</h3>
+          <FlightsLineChart />
+          <div className="chart"></div>
         </section>
-      </TextContainer>
+
+        <section className="multiple-charts">
+          {coordinates.airports.map((item, index) => {
+            return (
+              <div key={index} className="map-container">
+                <p>{item.city}</p>
+                <Map coordinates={item} />
+              </div>
+            )
+          })}
+        </section>
+      </section>
     </section>
   )
 }

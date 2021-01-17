@@ -1,17 +1,16 @@
 .bar-chart-container {
-    position: relative;
+  position: relative;
+  width: max-content;
+  font-family: 'Raleway', sans-serif;
+  .x-axis-label {
+    font-size: 0.8rem;
+    position: absolute;
+    left: 55px;
     width: max-content;
-    font-family: 'Raleway', sans-serif;
-    .x-axis-label {
-      position: absolute;
-      left: 80px;
-      width: max-content;
-    }
-    .bar-chart {
-      path {
-        stroke-width: 2px;
-      }
-  
-      
+  }
+  .bar-chart {
+    path {
+      stroke-width: 2px;
     }
   }
+}

@@ -10,6 +10,13 @@
   display: flex;
   flex-direction: column;
 
+  .compare-chart {
+    font-family: 'Raleway', sans-serif;
+    h3 {
+      margin: 1rem 0;
+    }
+  }
+
   // remove chart
   .chart {
     width: 100%;

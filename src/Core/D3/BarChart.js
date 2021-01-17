@@ -25,8 +25,8 @@ export const BarChart = () => {
       data: [0, 50, 20, 90, 50, 20, 50],
     },
   ]
-  const width = 700,
-    height = 500
+  const width = 300,
+    height = 300
   useEffect(() => {
     const svg = select(svgRef.current)
 
@@ -44,14 +44,19 @@ export const BarChart = () => {
     svg
       .select('.x-axis')
       .style('transform', `translateY(${height}px)`)
+      .style('color', `#fff`)
       .call(xAxis)
 
     const yAxis = axisLeft(yScale)
-    svg.select('.y-axis').style('padding-left', '100px').call(yAxis)
+    svg
+      .select('.y-axis')
+      .style('padding-left', '100px')
+      .style('color', `#fff`)
+      .call(yAxis)
 
     const color = scaleOrdinal(schemeCategory10)
       .domain(data.map((_, index) => index))
-      .range(['#F70123', '#003E1F'])
+      .range(['#ffffff', '#CAC9C9'])
 
     svg
       .selectAll('.bar')
