@@ -12,18 +12,26 @@ import {
   easeLinear,
 } from 'd3'
 
-export const LineChart = () => {
+export const FlightsLineChart = () => {
   const svgRef = useRef()
   const months = ['Jan', 'Feb', 'Mrt', 'Apr', 'Mei', 'Jun', 'Jul']
 
   const cities = [
     {
-      year: 'post covid',
+      city: 'amsterdam',
       data: [25, 30, 45, 60, 20, 65, 75],
     },
     {
-      year: 'covid',
-      data: [0, 50, 20, 90, 50, 20, 50],
+      city: 'london',
+      data: [0, 90, 20, 40, 83, 30, 85],
+    },
+    {
+      city: 'rome',
+      data: [90, 64, 20, 33, 75, 10, 45],
+    },
+    {
+      city: 'madrid',
+      data: [66, 34, 25, 86, 65, 94, 43],
     },
   ]
   const width = 700,
@@ -57,61 +65,43 @@ export const LineChart = () => {
     const tooltipLine = svg.append('line').style('stroke-dasharray', '7, 7')
 
     const color = scaleOrdinal(schemeCategory10)
-      .domain(cities.map((city) => city.year))
-      .range(['#F70123', '#003E1F'])
-
-    /* 
-      De tooltip line begint op 0.5 en neemt stappen van 1
-      Dus 0.5(Januari) naar 1.5 (Februari)
-
-      Om dagen te berekenen moeten we ff een formule scrhrijven.
-      Een hele maand is gelijk aan 1 stap.
-      Dus 1 is gelijk aan 30
-
-      We moeten de dag delen door 30 en de uitkomsten optellen 
-      met de stap
-      */
-    tooltipLine
-      .attr('stroke', 'lightgray')
-      .attr('x1', xScale(1.5))
-      .attr('x2', xScale(1.5))
-      .attr('y1', 50)
-      .attr('y2', height - 20)
-
-    svg
-      .append('text')
-      .attr('y', 60) //magic number here
-      .attr('x', function () {
-        return xScale(1.6)
-      })
-      .attr('text-anchor', 'begin')
-      .attr('class', 'test')
-      .text('Ingang maatregelen')
+      .domain(cities.map(({ city }) => city))
+      .range(['#F70123', '#003E1F', '#1535DB', '#F79501'])
 
     svg
       .selectAll('.line')
-      .data([cities[0], cities[1]])
+      .data(cities)
       .join('path')
       .attr('class', 'line')
       .attr('d', (value) => myLine(value.data))
       .attr('fill', 'none')
-      .attr('stroke', (value) => color(value.year))
-      .style('transform', 'translate(50px, -20px)')
+      .attr('stroke', (value) => color(value.city))
+      .style('transform', 'translate(150px, -20px)')
   }, [cities])
 
   return (
-    <div className="line-chart-container">
+    <div className="flights-line-chart-container">
       <ul className="legenda">
         <li>
-          <div></div>2019
+          <div></div>
+          <span>Amsterdam</span>
         </li>
         <li>
-          <div></div>2020
+          <div></div>
+          <span>Londen</span>
+        </li>
+        <li>
+          <div></div>
+          <span>Rome</span>
+        </li>
+        <li>
+          <div></div>
+          <span>Madrid</span>
         </li>
       </ul>
-      <p className="x-axis-label">NO2</p>
+      <p className="x-axis-label">Aantal vliegbewegingen</p>
       <svg ref={svgRef} className="line-chart" width={width} height={height}>
-        <g className="container" transform={`translate(${50}, ${-20})`}>
+        <g className="container" transform={`translate(${150}, ${-20})`}>
           <g className="x-axis" />
           <g className="y-axis" />
         </g>
@@ -120,7 +110,7 @@ export const LineChart = () => {
   )
 }
 
-LineChart.propTypes = {
+FlightsLineChart.propTypes = {
   data: PropTypes.array,
   margin: PropTypes.number.isRequired,
 }
