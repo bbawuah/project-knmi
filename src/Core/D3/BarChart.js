@@ -67,14 +67,19 @@ export const BarChart = () => {
       .attr('y', yScale)
       .attr('width', xScale.bandwidth())
       .attr('fill', (value, index) => color(index))
-      .attr('height', (value) => height - yScale(value) - 20)
+      .attr('height', (value) => height - yScale(value) + 10)
   }, [cities])
 
   return (
     <div className="bar-chart-container">
       <p className="x-axis-label">Aantal vliegbewegingen (januari tot juni)</p>
-      <svg ref={svgRef} className="bar-chart" width={width} height={height}>
-        <g className="container" transform={`translate(${50}, ${-20})`}>
+      <svg
+        ref={svgRef}
+        className="bar-chart"
+        width={width}
+        height={height + 50}
+      >
+        <g className="container" transform={`translate(${50}, ${10})`}>
           <g className="x-axis" />
           <g className="y-axis" />
         </g>
