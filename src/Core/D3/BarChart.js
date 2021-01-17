@@ -58,7 +58,7 @@ export const BarChart = () => {
       .data(data)
       .join('rect')
       .attr('class', 'bar')
-      .attr('x', (value, index) => xScale(index) + 100)
+      .attr('x', (value, index) => xScale(index) + 150)
       .attr('y', yScale)
       .attr('width', xScale.bandwidth())
       .attr('fill', (value, index) => color(index))
@@ -69,7 +69,7 @@ export const BarChart = () => {
     <div className="bar-chart-container">
       <p className="x-axis-label">Aantal vliegbewegingen</p>
       <svg ref={svgRef} className="bar-chart" width={width} height={height}>
-        <g className="container" transform={`translate(${100}, ${-20})`}>
+        <g className="container" transform={`translate(${150}, ${-20})`}>
           <g className="x-axis" />
           <g className="y-axis" />
         </g>
