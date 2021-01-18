@@ -11,7 +11,7 @@ import { NO2LineChart } from '../D3/No2LineChart'
 import { FlightsLineChart } from '../D3/FlightsLineChart'
 import { BarChart } from '../D3/BarChart'
 
-export const Amsterdam = () => {
+export const London = () => {
   return (
     <section className="cities-page-container">
       <TextContainer>
@@ -23,11 +23,11 @@ export const Amsterdam = () => {
                   return (
                     <div className="title">
                       <Trail
-                        title="Amsterdam"
+                        title="London"
                         color="#F70123"
                         isVisible={isVisible}
                       />
-                      <Subtitle>Schiphol</Subtitle>
+                      <Subtitle>heathrow</Subtitle>
                     </div>
                   )
                 }}
@@ -43,10 +43,7 @@ export const Amsterdam = () => {
                 </Paragraph>
               </div>
             </div>
-            <img
-              className="cities-page-image"
-              src="./assets/amsterdam.png"
-            ></img>
+            <img className="cities-page-image" src="./assets/londen.png"></img>
           </div>
           <div className="cities-page-line-chart-container">
             <div className="cities-page-info-box-left-container">
@@ -66,7 +63,7 @@ export const Amsterdam = () => {
           <section className="cities-page-measures-section">
             <article>
               <Paragraph>
-                <strong>Maatregelen in Amsterdam</strong>
+                <strong>Maatregelen in London</strong>
               </Paragraph>
               <ul>
                 <li>
@@ -92,7 +89,7 @@ export const Amsterdam = () => {
             </div>
           </section>
           <section className="cities-page-map">
-            <Map coordinates={coordinates.airports[0]} zoomLevel={10} />
+            <Map coordinates={coordinates.airports[1]} zoomLevel={10} />
           </section>
         </section>
       </TextContainer>
