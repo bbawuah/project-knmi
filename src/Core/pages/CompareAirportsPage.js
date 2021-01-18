@@ -11,10 +11,6 @@ import { FlightsLineChart } from '../D3/FlightsLineChart'
 import { BarChart } from '../D3/BarChart'
 
 function CompareAirportsPage() {
-  const width = 700,
-    height = 500,
-    margin = 20
-  const data = [25, 34, 56, 65]
   return (
     <section className="compare-page-container">
       <section className="compare-page-content">
@@ -71,7 +67,7 @@ function CompareAirportsPage() {
                 <p>{item.city}</p>
                 <Map coordinates={item} />
 
-                <label for="months">Kies een maand:</label>
+                <label htmlFor="months">Kies een maand:</label>
                 <select id="months">
                   <option value="Januari">Januari</option>
                   <option value="Febuari">Febuari</option>

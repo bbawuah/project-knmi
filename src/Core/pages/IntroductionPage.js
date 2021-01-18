@@ -4,11 +4,13 @@ import { Trail } from '../Animations/Trail'
 function IntroductionPage() {
   return (
     <section className="introduction-container">
-      <Trail
-        isVisible={true}
-        title="Hoe een virus de lucht schoner maakt"
-        color="#fff"
-      />
+      <div className="introduction-title-container">
+        <Trail
+          isVisible={true}
+          title="Hoe een virus de lucht schoner maakt"
+          color="#fff"
+        />
+      </div>
     </section>
   )
 }

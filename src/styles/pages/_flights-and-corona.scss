@@ -1,39 +1,45 @@
 .flights-and-corona {
   background: #73ba9b;
-  padding: 4rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  h1 {
-    max-width: 45rem;
-    color: $white;
-    padding-bottom: 3rem;
-  }
-
   p {
-    padding-top: 2rem;
     color: $white;
-    max-width: 45rem;
   }
-
-  .information-container {
+  .flights-and-corona-wrapper {
+    padding: 4rem 0;
     display: flex;
     flex-wrap: wrap;
-    padding: 4rem 0;
-    div:first-of-type {
-      margin-right: 1rem;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1200px;
+    h1 {
+      max-width: 45rem;
+      color: $white;
+      padding-bottom: 3rem;
+    }
+
+    p {
+      padding-top: 2rem;
+      max-width: 45rem;
+    }
+
+    .information-container {
+      display: flex;
+      max-width: 600px;
+      padding: 4rem 0;
+      div:first-of-type {
+        margin-right: 1rem;
+      }
     }
   }
-}
 
-.person-container {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: max-content;
-  padding-left: 5rem;
-  align-content: center;
+  .person-container {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(60px, 1fr));
+    grid-template-rows: max-content;
+    padding-left: 5rem;
+    align-content: center;
 
-  .person-image {
-    width: 2.3rem;
+    .person-image {
+      width: 2.3rem;
+    }
   }
 }
