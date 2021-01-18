@@ -6,7 +6,7 @@ export const Map = ({ coordinates }) => {
   const googleMapRef = useRef()
   useEffect(() => {
     ;(async () => {
-      const data = await fetch('http://localhost:3000/mapId', {
+      const data = await fetch('https://knmi-backend.herokuapp.com/mapId', {
         mode: 'cors',
         headers: {
           'Access-Control-Allow-Origin': '*',
@@ -17,8 +17,6 @@ export const Map = ({ coordinates }) => {
       initialize(json.mapId, googleMapRef)
     })()
   }, [])
-
-  // console.log(coordinates)
 
   const initialize = (mapid, el) => {
     // console.log(window.google)
