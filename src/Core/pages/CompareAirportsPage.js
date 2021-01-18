@@ -70,6 +70,22 @@ function CompareAirportsPage() {
               <div key={index} className="map-container">
                 <p>{item.city}</p>
                 <Map coordinates={item} />
+
+                <label for="months">Kies een maand:</label>
+                <select id="months">
+                  <option value="Januari">Januari</option>
+                  <option value="Febuari">Febuari</option>
+                  <option value="Maart">Maart</option>
+                  <option value="April">April</option>
+                  <option value="Mei">Mei</option>
+                  <option value="Juni">Juni</option>
+                  <option value="Juli">Juli</option>
+                  <option value="Augustus">Augustus</option>
+                  <option value="September">September</option>
+                  <option value="Oktober">Oktober</option>
+                  <option value="November">November</option>
+                  <option value="December">December</option>
+                </select>
               </div>
             )
           })}
