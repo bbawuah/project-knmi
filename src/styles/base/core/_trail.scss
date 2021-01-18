@@ -1,30 +1,26 @@
 .trails-main {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: start;
+  flex-flow: row wrap;
+  .trails-main-text-container {
     display: flex;
-    justify-content: start;
-    flex-flow: row wrap;
-    max-width: 55rem;
-    .trails-main-text-container {
-        display: flex;
-        flex-wrap: wrap;
-        max-width: 55rem;
-        .trails-text {
-            font-family: $title-font;
-            height: 110px;
-            font-size: 5rem;
-            line-height: 6.5rem;
-            color: black;
-            font-weight: 800;
-            letter-spacing: -5px;
-            will-change: transform, opacity;
-            div {
-                overflow: hidden;
-                margin-right: 5px;
-                padding-right: 8px;
-            }
-        }
+    flex-wrap: wrap;
+    .trails-text {
+      font-family: $title-font;
+      height: 110px;
+      font-size: 5rem;
+      line-height: 6.5rem;
+      color: black;
+      font-weight: 800;
+      letter-spacing: -5px;
+      will-change: transform, opacity;
+      div {
+        overflow: hidden;
+        margin-right: 5px;
+        padding-right: 8px;
+      }
     }
-    
   }
-  
+}
