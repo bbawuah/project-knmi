@@ -3,33 +3,40 @@ import React from 'react'
 import { render } from 'react-dom'
 import 'normalize.css/normalize.css'
 import './styles/styles.scss'
-import { Paragraph } from '../src/Typography/Paragraph'
-import { Title } from '../src/Typography/Title'
-import { Container } from '../src/Core/Container'
-import { Subtitle } from '../src/Typography/Subtitle'
-import { YearSlider } from './Core/YearSlider'
-import { NavButtons } from './Core/NavButtons'
 import IntroductionPage from './Core/pages/IntroductionPage'
 import FlightsAndCorona from './Core/pages/FlightsAndCorona'
-import { InformationBox } from './Core/InformationBox'
 import WhatIsNo2 from './Core/pages/WhatIsNo2'
 import CompareAirportsPage from './Core/pages/CompareAirportsPage'
-import { ToggleImage } from './Core/ToggleImage'
+import { WhatIsEffect } from './Core/pages/WhatIsEffect'
+import { Amsterdam } from './Core/pages/Amsterdam'
+import { NavButtons } from './Core/NavButtons'
 import { Map } from './Core/Map'
-
-const timeStamps = {
-  vijftienMaart: ['1584230400', '1584316799'],
-}
 
 const App = () => {
   return (
     <div>
       <IntroductionPage />
       <WhatIsNo2 />
+      <WhatIsEffect />
       <FlightsAndCorona />
       <CompareAirportsPage />
-      {/* <ToggleImage foto1="foto1.jpeg" foto2="foto2.jpeg" /> */}
-      {/* <Map /> */}
+      <nav className="cities-menu">
+        <ul>
+          <li>
+            <NavButtons>Amsterdam</NavButtons>
+          </li>
+          <li>
+            <NavButtons>Londen</NavButtons>
+          </li>
+          <li>
+            <NavButtons>Rome</NavButtons>
+          </li>
+          <li>
+            <NavButtons>Madrid</NavButtons>
+          </li>
+        </ul>
+      </nav>
+      <Amsterdam />
     </div>
   )
 }

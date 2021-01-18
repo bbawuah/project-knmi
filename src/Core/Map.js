@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react'
 import ee from '@google/earthengine'
+import PropTypes from 'prop-types'
 
 export const Map = ({ coordinates }) => {
   const googleMapRef = useRef()
@@ -17,7 +18,7 @@ export const Map = ({ coordinates }) => {
     })()
   }, [])
 
-  console.log(coordinates)
+  // console.log(coordinates)
 
   const initialize = (mapid, el) => {
     // console.log(window.google)
@@ -48,4 +49,8 @@ export const Map = ({ coordinates }) => {
       style={{ height: '100%', width: '100%' }}
     />
   )
+}
+
+Map.propTypes = {
+  coordinates: PropTypes.object.isRequired,
 }

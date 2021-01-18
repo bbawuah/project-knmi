@@ -1,0 +1,96 @@
+.what-is-effect-container {
+    background-color: #161A1D;
+    position: relative;
+    height: 100%;
+    padding: 4rem 0;
+
+    h1 {
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .what-is-effect-header-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    p {
+        color: #fff;
+    }
+
+    .wat-is-effect-text-container {
+        padding: 1rem 2rem;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        max-width: 400px;
+        h3 {
+            color: #fff;
+            font-family: Roboto;
+            font-weight: bold;
+            font-size: 22px;
+            line-height: 26px;
+        }
+    }
+
+    #wat-is-effect-text-container-0 {
+        top: 40px;
+        left: 200px;
+
+    }
+
+    #wat-is-effect-text-container-1 {
+        left: 50px;
+        top: 200px;
+
+    }
+
+    #wat-is-effect-text-container-2 {
+        left: 20px;
+        top: 440px;
+    }
+
+    #wat-is-effect-text-container-3 {
+        bottom: 20px;
+        left: 300px;
+    }
+
+    #wat-is-effect-text-container-4 {
+        top: 260px;
+        left: 40%;
+    }
+
+    #wat-is-effect-text-container-5 {
+        top: 100px;
+        right: 290px;
+    }
+
+    #wat-is-effect-text-container-6 {
+        top: 200px;
+        right: 0;
+    }
+
+    #wat-is-effect-text-container-7 {
+        top: 400px;
+        right: 10px;
+    }
+
+    #wat-is-effect-text-container-8 {
+        bottom: 10px;
+        right: 30px;
+    }
+
+    .what-is-effect-content-container {
+        min-height: 800px;
+        position: relative;
+    }
+
+    .what-is-effect-illustration {
+        position:absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50%;
+    }
+}
