@@ -11,7 +11,7 @@ import { NO2LineChart } from '../D3/No2LineChart'
 import { FlightsLineChart } from '../D3/FlightsLineChart'
 import { BarChart } from '../D3/BarChart'
 
-export const Amsterdam = () => {
+export const Rome = () => {
   return (
     <section className="cities-page-container">
       <TextContainer>
@@ -23,30 +23,26 @@ export const Amsterdam = () => {
                   return (
                     <div className="title">
                       <Trail
-                        title="Amsterdam"
+                        title="Rome"
                         color="#F70123"
                         isVisible={isVisible}
                       />
-                      <Subtitle>Schiphol</Subtitle>
+                      <Subtitle>Roma-Fiumicino</Subtitle>
                     </div>
                   )
                 }}
               </VisibilitySensor>
               <div>
                 <Paragraph>
-                  Vanaf 3 maart tot april was er een intelligente lockdown in
-                  Nederland. Men moest zoveel mogelijk proberen thuis te blijven
-                  en niet naar buitenland reizen. Voor rezigers vanuit het
-                  buitenland geldt het dringende advies om niet naar Nederland
-                  te reizen tenzij het noodzakelijk is. Dit heeft natuurlijk
-                  enorme gevolgen voor het luchtverkeer.
+                  Italië heeft de Corona pandemie zeker gevoeld… Vanaf 8 maart
+                  tot april was er een strenge lockdown in geheel Italië.
+                  Inwoners mochten amper naar buiten toe, laat staan naar het
+                  buitenland. Wat zal dit voor gevolgen hebben op het NO2
+                  gehalte rondom de hoofdstad Rome?
                 </Paragraph>
               </div>
             </div>
-            <img
-              className="cities-page-image"
-              src="./assets/amsterdam.png"
-            ></img>
+            <img className="cities-page-image" src="./assets/rome.png"></img>
           </div>
           <div className="cities-page-line-chart-container">
             <div className="cities-page-info-box-left-container">
@@ -66,7 +62,7 @@ export const Amsterdam = () => {
           <section className="cities-page-measures-section">
             <article>
               <Paragraph>
-                <strong>Maatregelen in Amsterdam</strong>
+                <strong>Maatregelen in Rome</strong>
               </Paragraph>
               <ul>
                 <li>
@@ -75,8 +71,15 @@ export const Amsterdam = () => {
                     tot medio maart
                   </Paragraph>
                 </li>
+                <li>
+                  <Paragraph>
+                    Voor reizen vanuit het buitenland geldt het dringende advies
+                    om niet naar Nederland te reizen, tenzij noodzakelijk.
+                  </Paragraph>
+                </li>
               </ul>
             </article>
+
             <div className="cities-page-info-box-right-container">
               <InformationBox backgroundColor="red">
                 <Subtitle>TITLE</Subtitle>
@@ -92,7 +95,7 @@ export const Amsterdam = () => {
             </div>
           </section>
           <section className="cities-page-map">
-            <Map coordinates={coordinates.airports[0]} zoomLevel={10} />
+            <Map coordinates={coordinates.airports[2]} zoomLevel={10} />
           </section>
         </section>
       </TextContainer>
