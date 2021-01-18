@@ -11,7 +11,7 @@
     margin: 0 auto;
     max-width: 1200px;
     .flights-and-corona-title {
-      max-width: 500px;
+      max-width: 600px;
     }
     h1 {
       max-width: 45rem;
@@ -30,6 +30,10 @@
       padding: 4rem 0;
       div:first-of-type {
         margin-right: 1rem;
+        .info-box.white h2,
+        .info-box.white span {
+          color: #2c323a;
+        }
       }
     }
   }
@@ -57,6 +61,9 @@
       padding: 4.8rem 0 5.6rem 0.7rem;
       span {
         font-size: 3rem;
+      }
+      .gray {
+        color: #2c323a;
       }
       .red {
         color: #f70123;

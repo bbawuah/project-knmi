@@ -116,7 +116,7 @@ function FlightsAndCorona() {
                 </div>
                 <div className="year-container">
                   <Subtitle>
-                    <span>2019</span>
+                    <span className="gray">2019</span>
                   </Subtitle>
                   <Subtitle>
                     <span className="red">2020</span>
