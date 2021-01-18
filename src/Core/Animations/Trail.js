@@ -10,6 +10,7 @@ export const Trail = ({ isVisible, title, color }) => {
     x: isVisible ? 0 : 20,
     height: isVisible ? 110 : 0,
     from: { opacity: 0, x: 20, height: 0 },
+    letterSpacing: isVisible ? 1 : 0,
   })
   return (
     <div className="trails-main">

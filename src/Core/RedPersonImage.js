@@ -5,7 +5,7 @@ export function RedPersonImage({ styling }) {
   return (
     <img
       className="person-image"
-      src="./assets/darkred-icon.png"
+      src="./assets/red-icon.png"
       style={styling}
     ></img>
   )

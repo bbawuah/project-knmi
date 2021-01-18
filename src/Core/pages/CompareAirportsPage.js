@@ -24,7 +24,7 @@ function CompareAirportsPage() {
               <div className="title">
                 <Trail
                   title="Vergelijken van de luchthaven"
-                  color="#000"
+                  color="#F70123"
                   isVisible={isVisible}
                 />
                 <Subtitle>2019 & 2020</Subtitle>
