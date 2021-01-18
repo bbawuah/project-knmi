@@ -28,8 +28,8 @@ const App = () => {
       <WhatIsNo2 />
       <FlightsAndCorona />
       <CompareAirportsPage />
-      <ToggleImage foto1="foto1.jpeg" foto2="foto2.jpeg" />
-      <Map />
+      {/* <ToggleImage foto1="foto1.jpeg" foto2="foto2.jpeg" /> */}
+      {/* <Map /> */}
     </div>
   )
 }

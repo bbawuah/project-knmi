@@ -1,14 +1,14 @@
-import React from 'react';
-import { Paragraph } from '../../../src/Typography/Paragraph';
-import { Title } from '../../../src/Typography/Title';
-import { InformationBox } from '../../Core/InformationBox';
-import { RedPersonImage } from '../RedPersonImage';
-import { GreenPersonImage } from '../GreenPersonImage';
-import { Subtitle } from '../../../src/Typography/Subtitle';
+import React from 'react'
+import { Paragraph } from '../../../src/Typography/Paragraph'
+import { Title } from '../../../src/Typography/Title'
+import { InformationBox } from '../../Core/InformationBox'
+import { RedPersonImage } from '../RedPersonImage'
+import { GreenPersonImage } from '../GreenPersonImage'
+import { Subtitle } from '../../../src/Typography/Subtitle'
 
 function FlightsAndCorona() {
-  const redPersonCount = Array(49).fill('red');
-  redPersonCount.push('green');
+  const redPersonCount = Array(49).fill('red')
+  redPersonCount.push('green')
 
   return (
     <section className="flights-and-corona">
@@ -16,9 +16,9 @@ function FlightsAndCorona() {
         <Title>VLIEGVERKEER EN CORONA</Title>
         <Paragraph>
           Met de groei van het vliegverkeer is de hele wereld inmiddels bezaaid
-          met vliegvelden. Er zijn er al meer dan 44.000, van hele grote tot
-          hele kleine die eigenlijk nauwelijks de titel 'vliegveld' mogen
-          krijgen.
+          met vliegvelden. Er zijn er al meer dan <strong>44.000</strong>, van
+          hele grote tot hele kleine die eigenlijk nauwelijks de titel
+          'vliegveld' mogen krijgen.
         </Paragraph>
         <Paragraph>
           Al deze vliegvelden bij elkaar stoten een enorm aantal NO2 uit. Naast
@@ -41,11 +41,14 @@ function FlightsAndCorona() {
           </InformationBox>
 
           <InformationBox backgroundColor="white">
-            <Subtitle>2020 </Subtitle>
+            <Subtitle>
+              <span className="green">2020</span>
+            </Subtitle>
             <Paragraph>
-              In <span>april 2020</span> reisden bijna 134 duizend passagiers
-              van en naar de vijf nationale luchthavens,
-              <span>98 procent minder</span> dan in april 2019
+              In <span className="green">april 2020</span> reisden bijna 134
+              duizend passagiers van en naar de vijf nationale luchthavens,
+              <span className="green"> 98 procent minder</span> dan in april
+              2019
             </Paragraph>
           </InformationBox>
         </div>
@@ -54,14 +57,14 @@ function FlightsAndCorona() {
       <div className="person-container">
         {redPersonCount.map((item, index) => {
           if (item == 'red') {
-            return <RedPersonImage key={index} />;
+            return <RedPersonImage key={index} />
           } else {
-            return <GreenPersonImage key={index} />;
+            return <GreenPersonImage key={index} />
           }
         })}
       </div>
     </section>
-  );
+  )
 }
 
-export default FlightsAndCorona;
+export default FlightsAndCorona

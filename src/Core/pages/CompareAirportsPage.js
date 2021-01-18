@@ -17,13 +17,15 @@ function CompareAirportsPage() {
         <div className="text-section">
           <div>
             <Paragraph>
-              Lorem Ipsum is slechts een proeftekst uit het drukkerij- en
-              zetterijwezen. Lorem Ipsum is de standaard proeftekst in deze
-              bedrijfstak sinds de 16e eeuw, toen een onbekende drukker een
-              zethaak met letters nam en ze door elkaar husselde om een
-              font-catalogus te maken. Het heeft niet alleen vijf eeuwen
-              overleefT. toen een onbekende drukker een zethaak met letters nam
-              en ze door elkaar husselde om een font-catalogus.
+              Hebben de luchthavens nou echt zo veel impact op het NO2 gehalte
+              in de lucht? Om deze vraag te beantwoorden gaan we kijken naar 4
+              grote luchthavens in Europa. Door de Corona pandemie is het
+              luchtverkeer in veel landen zwaar gedaald. Met behulp van deze
+              daling kunnen wij de NO2 waardes voor en na de daling in het
+              luchtverkeer bekijken. De door ons gekozen luchthavens komen
+              allemaal uit verschillende landen en hebben dus ook te maken met
+              verschillende Corona maatregelen. Ben jij ook zo benieuwd wat hier
+              uitkomt? Lees dan snel verder!
             </Paragraph>
           </div>
 
@@ -50,6 +52,22 @@ function CompareAirportsPage() {
               <div key={index} className="map-container">
                 <p>{item.city}</p>
                 <Map coordinates={item} />
+
+                <label for="months">Kies een maand:</label>
+                <select id="months">
+                  <option value="Januari">Januari</option>
+                  <option value="Febuari">Febuari</option>
+                  <option value="Maart">Maart</option>
+                  <option value="April">April</option>
+                  <option value="Mei">Mei</option>
+                  <option value="Juni">Juni</option>
+                  <option value="Juli">Juli</option>
+                  <option value="Augustus">Augustus</option>
+                  <option value="September">September</option>
+                  <option value="Oktober">Oktober</option>
+                  <option value="November">November</option>
+                  <option value="December">December</option>
+                </select>
               </div>
             )
           })}
