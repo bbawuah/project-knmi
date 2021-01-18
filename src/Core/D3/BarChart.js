@@ -64,10 +64,10 @@ export const BarChart = () => {
       .join('rect')
       .attr('class', 'bar')
       .attr('x', (value, index) => xScale(index) + 50)
-      .attr('y', yScale)
+      .attr('y', (v, i) => yScale(v) + 10)
       .attr('width', xScale.bandwidth())
       .attr('fill', (value, index) => color(index))
-      .attr('height', (value) => height - yScale(value) + 10)
+      .attr('height', (value) => height - yScale(value))
   }, [cities])
 
   return (

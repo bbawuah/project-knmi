@@ -4,11 +4,16 @@
   font-family: 'Raleway', sans-serif;
   .x-axis-label {
     font-size: 0.8rem;
+    font-style: italic;
     position: absolute;
+    top: 5px;
     left: 55px;
     width: max-content;
   }
   .bar-chart {
+    .container {
+      padding: 1rem;
+    }
     path {
       stroke-width: 2px;
     }
