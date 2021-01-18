@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react'
 import ee from '@google/earthengine'
 import PropTypes from 'prop-types'
 
-export const Map = ({ coordinates }) => {
+export const Map = ({ coordinates, zoomLevel }) => {
   const googleMapRef = useRef()
   useEffect(() => {
     ;(async () => {
@@ -25,7 +25,7 @@ export const Map = ({ coordinates }) => {
         lng: coordinates.longitude,
         lat: coordinates.latitude,
       },
-      zoom: 6,
+      zoom: zoomLevel,
     })
 
     const tileSource = new ee.layers.EarthEngineTileSource({
@@ -51,4 +51,5 @@ export const Map = ({ coordinates }) => {
 
 Map.propTypes = {
   coordinates: PropTypes.object.isRequired,
+  zoomLevel: PropTypes.number.isRequired,
 }

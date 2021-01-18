@@ -20,7 +20,7 @@ function CompareAirportsPage() {
               <div className="title">
                 <Trail
                   title="Vergelijken van de luchthaven"
-                  color="#000"
+                  color="#F70123"
                   isVisible={isVisible}
                 />
                 <Subtitle>2019 & 2020</Subtitle>
@@ -57,17 +57,20 @@ function CompareAirportsPage() {
         <section className="compare-chart">
           <h3>Luchtverkeer tijdens de lockdown</h3>
           <FlightsLineChart />
-          <div className="chart"></div>
         </section>
 
         <section className="multiple-charts">
           {coordinates.airports.map((item, index) => {
             return (
               <div key={index} className="map-container">
-                <p>{item.city}</p>
-                <Map coordinates={item} />
+                <Paragraph>
+                  <strong>{item.city}</strong>
+                </Paragraph>
+                <Map coordinates={item} zoomLevel={8} />
 
-                <label htmlFor="months">Kies een maand:</label>
+                <label htmlFor="months">
+                  <Paragraph>Kies een maand:</Paragraph>
+                </label>
                 <select id="months">
                   <option value="Januari">Januari</option>
                   <option value="Febuari">Febuari</option>

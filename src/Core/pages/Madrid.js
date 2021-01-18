@@ -11,7 +11,7 @@ import { NO2LineChart } from '../D3/No2LineChart'
 import { FlightsLineChart } from '../D3/FlightsLineChart'
 import { BarChart } from '../D3/BarChart'
 
-export const Amsterdam = () => {
+export const Madrid = () => {
   return (
     <section className="cities-page-container">
       <TextContainer>
@@ -23,7 +23,7 @@ export const Amsterdam = () => {
                   return (
                     <div className="title">
                       <Trail
-                        title="Amsterdam"
+                        title="Madrid"
                         color="#F70123"
                         isVisible={isVisible}
                       />
@@ -43,10 +43,7 @@ export const Amsterdam = () => {
                 </Paragraph>
               </div>
             </div>
-            <img
-              className="cities-page-image"
-              src="./assets/amsterdam.png"
-            ></img>
+            <img className="cities-page-image" src="./assets/madrid.png"></img>
           </div>
           <div className="cities-page-line-chart-container">
             <div className="cities-page-info-box-left-container">
@@ -66,7 +63,7 @@ export const Amsterdam = () => {
           <section className="cities-page-measures-section">
             <article>
               <Paragraph>
-                <strong>Maatregelen in Amsterdam</strong>
+                <strong>Maatregelen in Madrid</strong>
               </Paragraph>
               <ul>
                 <li>
@@ -77,6 +74,7 @@ export const Amsterdam = () => {
                 </li>
               </ul>
             </article>
+
             <div className="cities-page-info-box-right-container">
               <InformationBox backgroundColor="red">
                 <Subtitle>TITLE</Subtitle>
@@ -92,7 +90,7 @@ export const Amsterdam = () => {
             </div>
           </section>
           <section className="cities-page-map">
-            <Map coordinates={coordinates.airports[0]} zoomLevel={10} />
+            <Map coordinates={coordinates.airports[3]} zoomLevel={10} />
           </section>
         </section>
       </TextContainer>

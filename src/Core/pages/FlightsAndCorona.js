@@ -43,14 +43,17 @@ function FlightsAndCorona() {
                   <div className="information-container">
                     <div>
                       <InformationBox backgroundColor="white">
-                        <Subtitle>2019 </Subtitle>
+                        <Subtitle>
+                          <span className="blue">2019</span>
+                        </Subtitle>
                         <Paragraph>
-                          <span>68.948.849</span> aantal vluchten wereldwijd
+                          <span className="blue">68.948.849</span> aantal
+                          vluchten wereldwijd
                         </Paragraph>
 
                         <Paragraph>
-                          Dit zijn gemiddeld <span>188.901</span> vluchten per
-                          dag
+                          Dit zijn gemiddeld{' '}
+                          <span className="blue">188.901</span> vluchten per dag
                         </Paragraph>
                       </InformationBox>
                     </div>
@@ -113,6 +116,58 @@ function FlightsAndCorona() {
           }}
         </VisibilitySensor>
       </div>
+
+      <VisibilitySensor once partialVisibility>
+        {({ isVisible }) => {
+          return (
+            <div className="persons-and-years">
+              <div className="person-container">
+                {redPersonCount.map((item, index) => {
+                  if (item == 'green') {
+                    return (
+                      <Spring
+                        key={index}
+                        delay={110 * index}
+                        to={{
+                          opacity: isVisible ? 1 : 0,
+                          transform: isVisible
+                            ? 'translateY(0)'
+                            : 'translateY(100px)',
+                        }}
+                      >
+                        {(props) => <GreenPersonImage styling={{ ...props }} />}
+                      </Spring>
+                    )
+                  } else {
+                    return (
+                      <Spring
+                        key={index}
+                        delay={110 * index}
+                        to={{
+                          opacity: isVisible ? 1 : 0,
+                          transform: isVisible
+                            ? 'translateY(0)'
+                            : 'translateY(100px)',
+                        }}
+                      >
+                        {(props) => <RedPersonImage styling={{ ...props }} />}
+                      </Spring>
+                    )
+                  }
+                })}
+              </div>
+              <div className="year-container">
+                <Subtitle>
+                  <span>2019</span>
+                </Subtitle>
+                <Subtitle>
+                  <span className="red">2020</span>
+                </Subtitle>
+              </div>
+            </div>
+          )
+        }}
+      </VisibilitySensor>
     </section>
   )
 }
