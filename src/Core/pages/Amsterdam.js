@@ -1,17 +1,17 @@
 import React from 'react'
-import { Subtitle } from '../../../src/Typography/Subtitle'
+import { Subtitle } from '../../Typography/Subtitle'
 import { Paragraph } from '../../Typography/Paragraph'
 import { InformationBox } from '../InformationBox'
 import { Trail } from '../Animations/Trail'
 import { VisibilitySensor } from '../VisibilitySensor'
 import { Map } from '../Map'
 import { TextContainer } from '../TextContainer'
-import coordinates from './../../../public/assets/coordinates.json'
+import coordinates from '../../../public/assets/coordinates.json'
 import { NO2LineChart } from '../D3/No2LineChart'
 import { FlightsLineChart } from '../D3/FlightsLineChart'
 import { BarChart } from '../D3/BarChart'
 
-export const Cities = () => {
+export const Amsterdam = () => {
   return (
     <section className="cities-page-container">
       <TextContainer>
