@@ -1,3 +1,4 @@
+
 import React, { Fragment } from 'react'
 import { Spring } from 'react-spring/renderprops.cjs'
 import { Paragraph } from '../../../src/Typography/Paragraph'
@@ -17,7 +18,6 @@ function FlightsAndCorona() {
       <div>
         <VisibilitySensor once partialVisibility>
           {({ isVisible }) => {
-            console.log(isVisible)
             return (
               <Fragment>
                 <Trail
@@ -41,25 +41,28 @@ function FlightsAndCorona() {
                 </Paragraph>
 
                 <div className="information-container">
-                  <InformationBox backgroundColor="white">
-                    <Subtitle>2019 </Subtitle>
-                    <Paragraph>
-                      <span>68.948.849</span> aantal vluchten wereldwijd
-                    </Paragraph>
+                  <div>
+                    <InformationBox backgroundColor="white">
+                      <Subtitle>2019 </Subtitle>
+                      <Paragraph>
+                        <span>68.948.849</span> aantal vluchten wereldwijd
+                      </Paragraph>
 
-                    <Paragraph>
-                      Dit zijn gemiddeld <span>188.901</span> vluchten per dag
-                    </Paragraph>
-                  </InformationBox>
-
-                  <InformationBox backgroundColor="white">
-                    <Subtitle>2020 </Subtitle>
-                    <Paragraph>
-                      In <span>april 2020</span> reisden bijna 134 duizend
-                      passagiers van en naar de vijf nationale luchthavens,
-                      <span>98 procent minder</span> dan in april 2019
-                    </Paragraph>
-                  </InformationBox>
+                      <Paragraph>
+                        Dit zijn gemiddeld <span>188.901</span> vluchten per dag
+                      </Paragraph>
+                    </InformationBox>
+                  </div>
+                  <div>
+                    <InformationBox backgroundColor="white">
+                      <Subtitle>2020 </Subtitle>
+                      <Paragraph>
+                        In <span>april 2020</span> reisden bijna 134 duizend
+                        passagiers van en naar de vijf nationale luchthavens,
+                        <span>98 procent minder</span> dan in april 2019
+                      </Paragraph>
+                    </InformationBox>
+                  </div>
                 </div>
               </Fragment>
             )
@@ -69,7 +72,6 @@ function FlightsAndCorona() {
 
       <VisibilitySensor once partialVisibility>
         {({ isVisible }) => {
-          console.log(`isVisible ${isVisible}`)
           return (
             <div className="person-container">
               {redPersonCount.map((item, index) => {

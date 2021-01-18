@@ -1,8 +1,6 @@
 .info-box {
   padding: 2rem;
   width: fit-content;
-  margin-right: 2rem;
-  margin-bottom: 1rem;
 
   &.green {
     background: #003e1f;
@@ -36,6 +34,9 @@
       max-width: 18rem;
       color: #f70123;
       font-weight: bold;
+    }
+    .green {
+      color: #043d20;
     }
   }
 }

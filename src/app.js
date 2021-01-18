@@ -8,11 +8,9 @@ import FlightsAndCorona from './Core/pages/FlightsAndCorona'
 import WhatIsNo2 from './Core/pages/WhatIsNo2'
 import CompareAirportsPage from './Core/pages/CompareAirportsPage'
 import { WhatIsEffect } from './Core/pages/WhatIsEffect'
+import { Amsterdam } from './Core/pages/Amsterdam'
+import { NavButtons } from './Core/NavButtons'
 import { Map } from './Core/Map'
-
-const timeStamps = {
-  vijftienMaart: ['1584230400', '1584316799'],
-}
 
 const App = () => {
   return (
@@ -22,7 +20,23 @@ const App = () => {
       <WhatIsEffect />
       <FlightsAndCorona />
       <CompareAirportsPage />
-      {/* <Map /> */}
+      <nav className="cities-menu">
+        <ul>
+          <li>
+            <NavButtons>Amsterdam</NavButtons>
+          </li>
+          <li>
+            <NavButtons>Londen</NavButtons>
+          </li>
+          <li>
+            <NavButtons>Rome</NavButtons>
+          </li>
+          <li>
+            <NavButtons>Madrid</NavButtons>
+          </li>
+        </ul>
+      </nav>
+      <Amsterdam />
     </div>
   )
 }

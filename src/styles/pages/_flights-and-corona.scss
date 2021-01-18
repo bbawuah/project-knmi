@@ -4,7 +4,6 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
   h1 {
     max-width: 45rem;
     color: $white;
@@ -21,13 +20,15 @@
     display: flex;
     flex-wrap: wrap;
     padding: 4rem 0;
-    justify-content: center;
+    div:first-of-type {
+      margin-right: 1rem;
+    }
   }
 }
 
 .person-container {
   display: grid;
-  grid-template-columns: repeat(5, 4.3rem);
+  grid-template-columns: repeat(5, 1fr);
   grid-template-rows: max-content;
   padding-left: 5rem;
   align-content: center;

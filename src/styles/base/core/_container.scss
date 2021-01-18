@@ -1,4 +1,6 @@
-.container {
+.text-container {
+  max-width: 1700px;
+  margin: 0 auto;
 }
 
 .introduction-container {
@@ -16,15 +18,4 @@
   .trails-main {
     padding: 0 3rem;
   }
-}
-
-.introduction-container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 98.2vh;
-  background: rgb(255,255,255);
-background: linear-gradient(180deg, rgba(255,255,255,0) 78%, rgba(22,26,29,1) 100%);
 }
