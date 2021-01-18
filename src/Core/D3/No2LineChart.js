@@ -22,11 +22,11 @@ export const NO2LineChart = () => {
     data: [
       {
         year: 'post covid',
-        value: [25, 30, 45, 60, 20, 65],
+        value: [47.6, 46.9, 42.2, 39.4, 31.7, 35.8],
       },
       {
         year: 'covid',
-        value: [0, 50, 20, 90, 50, 20],
+        value: [45.6, 44.6, 25.4, 17.9, 19.9, 23.2],
       },
     ],
   }
@@ -40,7 +40,7 @@ export const NO2LineChart = () => {
       .domain([0, 5])
       .range([0, width - 100])
 
-    const yScale = scaleLinear().domain([0, 150]).range([height, 0])
+    const yScale = scaleLinear().domain([0, 75]).range([height, 0])
 
     const xAxis = axisBottom(xScale)
       .ticks(months.length)
@@ -114,7 +114,7 @@ export const NO2LineChart = () => {
           <div></div>2020
         </li>
       </ul>
-      <p className="x-axis-label">NO2</p>
+      <p className="x-axis-label">NO2 (ug/m3)</p>
       <svg ref={svgRef} className="line-chart" width={width} height={height}>
         <g className="container" transform={`translate(${50}, ${-20})`}>
           <g className="x-axis" />
