@@ -1,50 +1,48 @@
 .flights-line-chart-container {
-    position: relative;
-    width: max-content;
-    font-family: 'Raleway', sans-serif;
-    .legenda {
+  position: relative;
+  width: max-content;
+  font-family: 'Raleway', sans-serif;
+  .legenda {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 50px;
+    width: 350px;
+    li {
       display: flex;
-      flex-direction: column;
-      position: absolute;
-      right: 50px;
-      width: 150px;
-      li {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-      }
-      li:first-of-type > div{
-        width: 30px;
-        height:2px;
-        background-color: #F70123;
-      }
-      li:nth-of-type(2) > div{
-        width: 30px;
-        height:2px;
-        background-color:#003E1F;
-      }
-      li:nth-of-type(3) > div{
-        width: 30px;
-        height:2px;
-        background-color: #1535DB;
-      }
-      li:last-of-type > div{
-        width: 30px;
-        height:2px;
-        background-color:#F79501;
-      }
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
     }
-    .x-axis-label {
-      position: absolute;
-      left: 80px;
-      width: max-content;
+    li:first-of-type > div {
+      width: 30px;
+      height: 2px;
+      background-color: #f70123;
     }
-    .line-chart {
-      path {
-        stroke-width: 2px;
-      }
-  
-      
+    li:nth-of-type(2) > div {
+      width: 30px;
+      height: 2px;
+      background-color: #003e1f;
+    }
+    li:nth-of-type(3) > div {
+      width: 30px;
+      height: 2px;
+      background-color: #1535db;
+    }
+    li:last-of-type > div {
+      width: 30px;
+      height: 2px;
+      background-color: #f79501;
     }
   }
+  .x-axis-label {
+    position: absolute;
+    left: 80px;
+    width: max-content;
+  }
+  .line-chart {
+    path {
+      stroke-width: 2px;
+    }
+  }
+}
