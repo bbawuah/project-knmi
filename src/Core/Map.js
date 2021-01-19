@@ -27,7 +27,6 @@ export const Map = ({ coordinates }) => {
   }, [])
 
   const initialize = (mapid, el) => {
-    // console.log(window.google)
     const embeddedMap = new window.google.maps.Map(el.current, {
       center: {
         lng: coordinates.longitude,
@@ -52,7 +51,7 @@ export const Map = ({ coordinates }) => {
       className="small-map"
       id="google-map"
       ref={googleMapRef}
-      style={{ height: '17rem', width: '100%' }}
+      style={{ height: '100%', width: '100%', minHeight: '17rem' }}
     />
   )
 }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Subtitle } from '../../Typography/Subtitle'
 import { Paragraph } from '../../Typography/Paragraph'
 import { InformationBox } from '../InformationBox'
@@ -10,8 +10,12 @@ import coordinates from '../../../public/assets/coordinates.json'
 import { NO2LineChart } from '../D3/No2LineChart'
 import { FlightsLineChart } from '../D3/FlightsLineChart'
 import { BarChart } from '../D3/BarChart'
+import Toggle from 'react-toggle'
+import 'react-toggle/style.css'
 
 export const Amsterdam = () => {
+  const [checked, setChecked] = useState(false)
+
   return (
     <section className="cities-page-container">
       <TextContainer>
@@ -79,20 +83,35 @@ export const Amsterdam = () => {
             </article>
             <div className="cities-page-info-box-right-container">
               <InformationBox backgroundColor="red">
-                <Subtitle>TITLE</Subtitle>
-                <Paragraph>
-                  De Vliegtuigbewegingen van Schiphol zijn in 2020 met 89,9%
-                  gedaald ten opzichte van 2019
-                </Paragraph>
+                <div>
+                  <Subtitle>TITLE</Subtitle>
+                  <Paragraph>
+                    De Vliegtuigbewegingen van Schiphol zijn in 2020 met{' '}
+                    <strong>89,9% gedaald</strong> ten opzichte van 2019
+                  </Paragraph>
 
-                <Paragraph>2019: 41.892 </Paragraph>
-                <Paragraph>2020: 4.242</Paragraph>
+                  <Paragraph>
+                    2019:<strong> 41.892</strong>
+                  </Paragraph>
+                  <Paragraph>
+                    2020: <strong>4.242</strong>
+                  </Paragraph>
+                </div>
                 <BarChart />
               </InformationBox>
             </div>
           </section>
           <section className="cities-page-map">
             <Map coordinates={coordinates.airports[0]} zoomLevel={10} />
+            <div className="slider-container">
+              <span>2019</span>
+              <Toggle
+                defaultChecked={checked}
+                icons={false}
+                onChange={() => setChecked(!checked)}
+              />
+              <span>2020</span>
+            </div>
           </section>
         </section>
       </TextContainer>
