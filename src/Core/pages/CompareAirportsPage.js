@@ -70,7 +70,6 @@ function CompareAirportsPage() {
               <div key={index} className="map-wrapper">
                 <Paragraph>
                   <strong>{item.city}</strong>
-                  {month}
                 </Paragraph>
 
                 <div className="map-container">
