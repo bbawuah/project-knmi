@@ -95,6 +95,10 @@ function CompareAirportsPage() {
             <option value="November">November</option>
             <option value="December">December</option>
           </select>
+          <Paragraph>
+            <strong>Kies een jaar:</strong>
+          </Paragraph>
+
           <div className="slider-container">
             <span>2019</span>
             <Toggle
