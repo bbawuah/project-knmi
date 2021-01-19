@@ -16,7 +16,7 @@ export const NO2LineChart = ({ data }) => {
   const svgRef = useRef()
   const months = ['Jan', 'Feb', 'Mrt', 'Apr', 'Mei', 'Jun']
 
-  const width = 700,
+  const width = 1200,
     height = 500
   useEffect(() => {
     const svg = select(svgRef.current)

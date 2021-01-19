@@ -53,18 +53,6 @@ export const Rome = () => {
             <img className="cities-page-image" src="./assets/rome.png"></img>
           </div>
           <div className="cities-page-line-chart-container">
-            <div className="cities-page-info-box-left-container">
-              <InformationBox backgroundColor="green">
-                <Subtitle>TITLE</Subtitle>
-                <Paragraph>
-                  De Vliegtuigbewegingen van Schiphol zijn in 2020 met 89,9%
-                  gedaald ten opzichte van 2019
-                </Paragraph>
-
-                <Paragraph>2019: 41.892</Paragraph>
-                <Paragraph>2020: 4.242</Paragraph>
-              </InformationBox>
-            </div>
             <NO2LineChart data={data} />
           </div>
           <section className="cities-page-measures-section">
