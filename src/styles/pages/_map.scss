@@ -1,4 +1,10 @@
-.map-container {
+.map-wrapper {
   width: 24%;
-  height: 20rem;
+  .map-container {
+    height: 300px;
+  }
+
+  .gmnoprint {
+    display: none;
+  }
 }

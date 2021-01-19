@@ -5,7 +5,7 @@ export function GreenPersonImage({ styling }) {
   return (
     <img
       className="person-image"
-      src="./assets/darkgreen-icon.png"
+      src="./assets/darkgrey-icon.png"
       style={styling}
     ></img>
   )

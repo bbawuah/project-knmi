@@ -32,11 +32,6 @@ function WhatIsNo2() {
             </VisibilitySensor>
           </div>
           <div className="right-section">
-            <Paragraph>
-              Hierbij komt er eerst stikstofmonoxide (NO) vrij en daarna door
-              een verdere reactie NO2.
-            </Paragraph>
-
             <div className="no2-container">
               <article>
                 <p className="chemicals-long">Stikstof</p>
@@ -55,9 +50,14 @@ function WhatIsNo2() {
               <p className="chemicals-long">Zuurstof</p>
               <p className="chemicals-short">O2</p>
               <p className="chemicals-formula pb">O = O</p>
+              <p className="paragraph pb">
+                Bij deze verbranding ontstaan er chemische reacties tussen het
+                stikstof (N) en het zuurstof in de lucht (O2) uit de lucht.
+              </p>
               <Paragraph>
-                Bij verbranding op hoge temperaturen ontstaan er chemische
-                reacties tussen stikstof (N) en zuurstof (O2) uit de lucht.
+                Door deze chemische reactie ontstaat stikstofmonoxide (NO).
+                Hierna vindt een verdere reactie plaats waaruit stikstofdioxide
+                (NO2) ontstaat.
               </Paragraph>
             </div>
           </div>

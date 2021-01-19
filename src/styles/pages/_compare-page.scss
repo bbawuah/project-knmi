@@ -30,6 +30,7 @@
 
     .multiple-charts {
       width: 100%;
+      height: 100%;
       display: flex;
       justify-content: space-between;
       padding-top: 4rem;
@@ -39,6 +40,21 @@
         width: 18rem;
         background-color: lightgrey;
       }
+    }
+  }
+  .date-dropdown {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem 0;
+
+    select {
+      border: none;
+      border-bottom: 1px solid black;
+      width: 8rem;
+      padding: 0.4rem;
+      font-family: $paragraph-font;
+      margin-bottom: 2rem;
     }
   }
 }

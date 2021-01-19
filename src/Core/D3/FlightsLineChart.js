@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import {
   select,
@@ -15,9 +15,14 @@ import airportData from '../../airportdata.json'
 export const FlightsLineChart = () => {
   const svgRef = useRef()
   const months = ['Jan', 'Feb', 'Mrt', 'Apr', 'Mei', 'Jun']
-  const width = 900,
-    height = 500
+  const [width, setWidth] = useState(1200)
+
+  const height = 500
   useEffect(() => {
+    if (window.innerWidth < 1200) {
+      console.log(window.innerWidth)
+      setWidth(window.innerWidth)
+    }
     const svg = select(svgRef.current)
 
     const xScale = scaleLinear()
@@ -58,26 +63,26 @@ export const FlightsLineChart = () => {
       .attr('fill', 'none')
       .attr('stroke', (value) => color(value.city))
       .style('transform', 'translate(50px, -20px)')
-  }, [airportData])
+  }, [airportData, window])
 
   return (
     <div className="flights-line-chart-container">
       <ul className="legenda">
         <li>
           <div></div>
-          <span>Amsterdam</span>
+          <span>Amsterdam Schiphol</span>
         </li>
         <li>
           <div></div>
-          <span>Londen</span>
+          <span>Londen Heathrow</span>
         </li>
         <li>
           <div></div>
-          <span>Rome</span>
+          <span>Roma-Fiomucio</span>
         </li>
         <li>
           <div></div>
-          <span>Madrid</span>
+          <span>Madrid Adolfo Suarez Madrid-Barajas </span>
         </li>
       </ul>
       <p className="x-axis-label">Aantal vliegbewegingen 2020</p>

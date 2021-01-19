@@ -2,32 +2,35 @@ import React, { useEffect, useState, useRef } from 'react'
 import ee from '@google/earthengine'
 import PropTypes from 'prop-types'
 
-export const Map = ({ coordinates }) => {
+export const Map = ({ coordinates, dates }) => {
   const googleMapRef = useRef()
+
   useEffect(() => {
     ;(async () => {
-      const data = await fetch('http://localhost:3000/mapId', {
+      const data = await fetch('https://knmi-backend.herokuapp.com/mapId', {
         mode: 'cors',
+        method: 'POST',
         headers: {
           'Access-Control-Allow-Origin': '*',
+          'Content-Type': 'application/json',
         },
+        body: JSON.stringify({
+          dates,
+        }),
       })
       const json = await data.json()
 
       initialize(json.mapId, googleMapRef)
     })()
-  }, [])
-
-  // console.log(coordinates)
+  }, [dates])
 
   const initialize = (mapid, el) => {
-    // console.log(window.google)
     const embeddedMap = new window.google.maps.Map(el.current, {
       center: {
         lng: coordinates.longitude,
         lat: coordinates.latitude,
       },
-      zoom: 6,
+      zoom: 5,
     })
 
     const tileSource = new ee.layers.EarthEngineTileSource({
@@ -36,9 +39,6 @@ export const Map = ({ coordinates }) => {
 
     const overlay = new ee.layers.ImageOverlay(tileSource)
     embeddedMap.overlayMapTypes.push(overlay)
-
-    var opacity = 0.5
-    const layer = new ee.addLayer(mapid, null, null, null, opacity)
   }
 
   return (
@@ -53,4 +53,5 @@ export const Map = ({ coordinates }) => {
 
 Map.propTypes = {
   coordinates: PropTypes.object.isRequired,
+  dates: PropTypes.array,
 }

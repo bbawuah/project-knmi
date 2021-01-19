@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
 import { Subtitle } from '../../../src/Typography/Subtitle'
 import { Paragraph } from '../../Typography/Paragraph'
 import { InformationBox } from '../InformationBox'
@@ -9,12 +9,13 @@ import { TextContainer } from '../TextContainer'
 import coordinates from './../../../public/assets/coordinates.json'
 import { FlightsLineChart } from '../D3/FlightsLineChart'
 import { BarChart } from '../D3/BarChart'
+import Toggle from 'react-toggle'
+import 'react-toggle/style.css'
 
 function CompareAirportsPage() {
-  const width = 700,
-    height = 500,
-    margin = 20
-  const data = [25, 34, 56, 65]
+  const [checked, setChecked] = useState(false)
+  const [month, setMonth] = useState('01')
+
   return (
     <section className="compare-page-container">
       <section className="compare-page-content">
@@ -24,7 +25,7 @@ function CompareAirportsPage() {
               <div className="title">
                 <Trail
                   title="Vergelijken van de luchthaven"
-                  color="#000"
+                  color="#F70123"
                   isVisible={isVisible}
                 />
                 <Subtitle>2019 & 2020</Subtitle>
@@ -61,19 +62,69 @@ function CompareAirportsPage() {
         <section className="compare-chart">
           <h3>Luchtverkeer tijdens de lockdown</h3>
           <FlightsLineChart />
-          <div className="chart"></div>
         </section>
 
         <section className="multiple-charts">
           {coordinates.airports.map((item, index) => {
             return (
-              <div key={index} className="map-container">
-                <p>{item.city}</p>
-                <Map coordinates={item} />
+              <div key={index} className="map-wrapper">
+                <Paragraph>
+                  <strong>{item.city}</strong>
+                  {month}
+                </Paragraph>
+
+                <div className="map-container">
+                  <Map
+                    coordinates={item}
+                    zoomLevel={8}
+                    dates={[
+                      `${!checked ? '2019' : '2020'}-${month}-01`,
+                      `${!checked ? '2019' : '2020'}-${month}-28`,
+                    ]}
+                  />
+                </div>
               </div>
             )
           })}
         </section>
+        <div className="date-dropdown">
+          <label htmlFor="months">
+            <Paragraph>
+              <strong>Kies een maand:</strong>
+            </Paragraph>
+          </label>
+          <select
+            id="months"
+            value={month}
+            onChange={(e) => setMonth(e.target.value)}
+          >
+            <option value="01">Januari</option>
+            <option value="02">Febuari</option>
+            <option value="03">Maart</option>
+            <option value="04">April</option>
+            <option value="05">Mei</option>
+            <option value="06">Juni</option>
+            <option value="07">Juli</option>
+            <option value="08">Augustus</option>
+            <option value="09">September</option>
+            <option value="10">Oktober</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+          </select>
+          <Paragraph>
+            <strong>Kies een jaar:</strong>
+          </Paragraph>
+
+          <div className="slider-container">
+            <span>2019</span>
+            <Toggle
+              defaultChecked={checked}
+              icons={false}
+              onChange={() => setChecked(!checked)}
+            />
+            <span>2020</span>
+          </div>
+        </div>
       </section>
     </section>
   )

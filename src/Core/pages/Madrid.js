@@ -11,14 +11,13 @@ import { NO2LineChart } from '../D3/No2LineChart'
 import { FlightsLineChart } from '../D3/FlightsLineChart'
 import { BarChart } from '../D3/BarChart'
 import Toggle from 'react-toggle'
-import no2DataJson from '../../cities.json'
+import no2Data from '../../cities.json'
 import aiportDataJson from '../../airportdata.json'
 import 'react-toggle/style.css'
 
-export const Amsterdam = () => {
-  const data = no2DataJson[0]
-  const aiportData = aiportDataJson[0]
-
+export const Madrid = () => {
+  const data = no2Data[3]
+  const aiportData = aiportDataJson[3]
   const [checked, setChecked] = useState(false)
 
   return (
@@ -52,10 +51,7 @@ export const Amsterdam = () => {
                 </Paragraph>
               </div>
             </div>
-            <img
-              className="cities-page-image"
-              src="./assets/amsterdam.png"
-            ></img>
+            <img className="cities-page-image" src="./assets/madrid.png"></img>
           </div>
           <div className="cities-page-line-chart-container">
             <div className="cities-page-info-box-left-container">
@@ -75,7 +71,7 @@ export const Amsterdam = () => {
           <section className="cities-page-measures-section">
             <article>
               <Paragraph>
-                <strong>Maatregelen in Amsterdam</strong>
+                <strong>Maatregelen in Madrid</strong>
               </Paragraph>
               <ul>
                 {data.measures.map((measure, index) => {
@@ -87,6 +83,7 @@ export const Amsterdam = () => {
                 })}
               </ul>
             </article>
+
             <div className="cities-page-info-box-right-container">
               <InformationBox backgroundColor="red">
                 <div>
@@ -109,7 +106,7 @@ export const Amsterdam = () => {
           </section>
           <section className="cities-page-map">
             <Map
-              coordinates={coordinates.airports[0]}
+              coordinates={coordinates.airports[3]}
               zoomLevel={10}
               dates={[
                 `${!checked ? '2019' : '2020'}-0${data.monthOfMeasures}-01`,

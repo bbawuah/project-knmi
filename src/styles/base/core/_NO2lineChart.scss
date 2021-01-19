@@ -14,20 +14,22 @@
       align-items: center;
       width: 80px;
     }
-    li:first-of-type > div{
+    li:first-of-type > div {
       width: 30px;
-      height:2px;
-      background-color: #F70123;
+      height: 2px;
+      background-color: #f70123;
     }
-    li:last-of-type > div{
+    li:last-of-type > div {
       width: 30px;
-      height:2px;
-      background-color: #003E1F;
+      height: 2px;
+      background-color: #003e1f;
     }
   }
   .x-axis-label {
     position: absolute;
     top: 40px;
+    font-size: 0.5rem;
+    left: 0;
     width: max-content;
     transform: rotate(-90deg);
   }
@@ -35,7 +37,5 @@
     path {
       stroke-width: 2px;
     }
-
-    
   }
 }

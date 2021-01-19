@@ -1,7 +1,6 @@
 .what-is-no2-container {
   background-color: #161a1d;
   padding: 5rem;
-  height: 100vh;
   h1 {
     padding: 3rem 0;
     color: $white;
@@ -13,7 +12,6 @@
     place-content: center;
     flex-wrap: wrap;
     width: 100%;
-    height: 100vh;
     p {
       max-width: 28rem;
       color: $white;
@@ -31,7 +29,7 @@
     .right-section {
       display: flex;
       flex-direction: column;
-      padding-top: 12rem;
+      padding-top: 5rem;
     }
 
     .no2-container {

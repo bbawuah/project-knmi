@@ -1,39 +1,76 @@
 .flights-and-corona {
   background: #73ba9b;
-  padding: 4rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  h1 {
-    max-width: 45rem;
-    color: $white;
-    padding-bottom: 3rem;
-  }
-
   p {
-    padding-top: 2rem;
     color: $white;
-    max-width: 45rem;
   }
-
-  .information-container {
+  .flights-and-corona-wrapper {
+    padding: 4rem 0;
     display: flex;
     flex-wrap: wrap;
-    padding: 4rem 0;
-    div:first-of-type {
-      margin-right: 1rem;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1200px;
+    .flights-and-corona-title {
+      max-width: 600px;
+    }
+    h1 {
+      max-width: 45rem;
+      color: $white;
+      padding-bottom: 3rem;
+    }
+
+    p {
+      padding-top: 2rem;
+      max-width: 45rem;
+    }
+
+    .information-container {
+      display: flex;
+      max-width: 600px;
+      padding: 4rem 0;
+      div:first-of-type {
+        margin-right: 1rem;
+        .info-box.white h2,
+        .info-box.white span {
+          color: #2c323a;
+        }
+      }
     }
   }
-}
 
-.person-container {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: max-content;
-  padding-left: 5rem;
-  align-content: center;
+  .person-container {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(20px, 1fr));
+    grid-template-rows: max-content;
+    align-content: center;
+    grid-column-gap: 1rem;
+    grid-row-gap: 0.3rem;
 
-  .person-image {
-    width: 2.3rem;
+    .person-image {
+      height: 4.3rem;
+    }
+  }
+
+  .persons-and-years {
+    display: flex;
+
+    .year-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 4.8rem 0 5.6rem 0.7rem;
+      span {
+        font-size: 3rem;
+      }
+      .gray {
+        color: #2c323a;
+      }
+      .red {
+        color: #f70123;
+      }
+    }
+    .blue {
+      color: #2c323a;
+    }
   }
 }
