@@ -4,8 +4,36 @@
       "measures": ["Maatregelen"],
       "dateOfMeasures": "3 Februari",
       "data": [
-        { "year": "post covid", "value": [25, 30, 45, 60, 20, 65] },
-        { "year": "covid", "value": [0, 50, 20, 90, 50, 20] }
+        { "year": "post covid", "value": [32.7, 45.3, 26.6, 24.7, 21, 22.7] },
+        { "year": "covid", "value": [22.92, 16.45, 19.92, 24.35, 50, 20.74] }
+      ]
+    },
+    {
+      "measures": ["Maatregelen"],
+      "dateOfMeasures": "3 Februari",
+      "data": [
+        {
+          "year": "post covid",
+          "value": [45.5, 47.3, 33.8, 38.9, 30.9, 25.9]
+        },
+        {
+          "year": "covid",
+          "value": [34.0, 28.0, 25.8, 24.2, 19.8, 19.9]
+        }
+      ]
+    },
+    {
+      "measures": ["Maatregelen"],
+      "dateOfMeasures": "3 Februari",
+      "data": [
+        {
+          "year": "post covid",
+          "value": [55.2, 55.2, 36.1, 27.4, 22.5, 24.6]
+        },
+        {
+          "year": "covid",
+          "value": [47.1, 45.4, 23.0, 12.2, 12.9, 16.6]
+        }
       ]
     }
   ]

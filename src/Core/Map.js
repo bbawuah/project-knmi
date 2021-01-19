@@ -2,23 +2,29 @@ import React, { useEffect, useState, useRef } from 'react'
 import ee from '@google/earthengine'
 import PropTypes from 'prop-types'
 
-export const Map = ({ coordinates, zoomLevel }) => {
+export const Map = ({ coordinates }) => {
   const googleMapRef = useRef()
+  const dates = {
+    dates: ['2020-01-01', '2020-01-30'],
+  }
   useEffect(() => {
     ;(async () => {
-      const data = await fetch('http://localhost:3000/mapId', {
+      const data = await fetch('https://knmi-backend.herokuapp.com/mapId', {
         mode: 'cors',
+        method: 'POST',
         headers: {
           'Access-Control-Allow-Origin': '*',
+          'Content-Type': 'application/json',
         },
+        body: JSON.stringify({
+          dates: ['2020-01-01', '2020-01-30'],
+        }),
       })
       const json = await data.json()
 
       initialize(json.mapId, googleMapRef)
     })()
   }, [])
-
-  // console.log(coordinates)
 
   const initialize = (mapid, el) => {
     // console.log(window.google)
@@ -27,7 +33,7 @@ export const Map = ({ coordinates, zoomLevel }) => {
         lng: coordinates.longitude,
         lat: coordinates.latitude,
       },
-      zoom: zoomLevel,
+      zoom: 6,
     })
 
     const tileSource = new ee.layers.EarthEngineTileSource({
@@ -53,5 +59,4 @@ export const Map = ({ coordinates, zoomLevel }) => {
 
 Map.propTypes = {
   coordinates: PropTypes.object.isRequired,
-  zoomLevel: PropTypes.number.isRequired,
 }
