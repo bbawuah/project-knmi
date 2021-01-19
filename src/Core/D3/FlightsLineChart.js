@@ -19,7 +19,6 @@ export const FlightsLineChart = () => {
 
   const height = 500
   useEffect(() => {
-    console.log(window.innerWidth)
     if (window.innerWidth < 1200) {
       console.log(window.innerWidth)
       setWidth(window.innerWidth)

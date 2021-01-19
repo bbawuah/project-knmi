@@ -12,9 +12,12 @@ import { FlightsLineChart } from '../D3/FlightsLineChart'
 import { BarChart } from '../D3/BarChart'
 import Toggle from 'react-toggle'
 import no2Data from '../../cities.json'
+import aiportDataJson from '../../airportdata.json'
 import 'react-toggle/style.css'
 
 export const Rome = () => {
+  const data = no2Data[2]
+  const aiportData = aiportDataJson[2]
   const [checked, setChecked] = useState(false)
 
   return (
@@ -28,7 +31,7 @@ export const Rome = () => {
                   return (
                     <div className="title">
                       <Trail
-                        title="Rome"
+                        title={data.city}
                         color="#F70123"
                         isVisible={isVisible}
                       />
@@ -62,7 +65,7 @@ export const Rome = () => {
                 <Paragraph>2020: 4.242</Paragraph>
               </InformationBox>
             </div>
-            <NO2LineChart data={no2Data[3]} />
+            <NO2LineChart data={data} />
           </div>
           <section className="cities-page-measures-section">
             <article>
@@ -70,18 +73,13 @@ export const Rome = () => {
                 <strong>Maatregelen in Rome</strong>
               </Paragraph>
               <ul>
-                <li>
-                  <Paragraph>
-                    Reis niet naar het buitenland en boek niet voor de periode
-                    tot medio maart
-                  </Paragraph>
-                </li>
-                <li>
-                  <Paragraph>
-                    Voor reizen vanuit het buitenland geldt het dringende advies
-                    om niet naar Nederland te reizen, tenzij noodzakelijk.
-                  </Paragraph>
-                </li>
+                {data.measures.map((measure, index) => {
+                  return (
+                    <li key={index}>
+                      <Paragraph>{measure.description}</Paragraph>
+                    </li>
+                  )
+                })}
               </ul>
             </article>
 
@@ -101,12 +99,19 @@ export const Rome = () => {
                     2020: <strong>4.242</strong>
                   </Paragraph>
                 </div>
-                <BarChart />
+                <BarChart data={aiportData} />
               </InformationBox>
             </div>
           </section>
           <section className="cities-page-map">
-            <Map coordinates={coordinates.airports[2]} zoomLevel={10} />
+            <Map
+              coordinates={coordinates.airports[2]}
+              zoomLevel={10}
+              dates={[
+                `${!checked ? '2019' : '2020'}-0${data.monthOfMeasures}-01`,
+                `${!checked ? '2019' : '2020'}-0${data.monthOfMeasures}-28`,
+              ]}
+            />
             <div className="slider-container">
               <span>2019</span>
               <Toggle

@@ -2,11 +2,9 @@ import React, { useEffect, useState, useRef } from 'react'
 import ee from '@google/earthengine'
 import PropTypes from 'prop-types'
 
-export const Map = ({ coordinates }) => {
+export const Map = ({ coordinates, dates }) => {
   const googleMapRef = useRef()
-  const dates = {
-    dates: ['2020-01-01', '2020-01-30'],
-  }
+
   useEffect(() => {
     ;(async () => {
       const data = await fetch('https://knmi-backend.herokuapp.com/mapId', {
@@ -17,14 +15,14 @@ export const Map = ({ coordinates }) => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          dates: ['2020-01-01', '2020-01-30'],
+          dates,
         }),
       })
       const json = await data.json()
 
       initialize(json.mapId, googleMapRef)
     })()
-  }, [])
+  }, [dates])
 
   const initialize = (mapid, el) => {
     const embeddedMap = new window.google.maps.Map(el.current, {
@@ -48,11 +46,12 @@ export const Map = ({ coordinates }) => {
       className="small-map"
       id="google-map"
       ref={googleMapRef}
-      style={{ height: '100%', width: '100%', minHeight: '17rem' }}
+      style={{ height: '100%', width: '100%' }}
     />
   )
 }
 
 Map.propTypes = {
   coordinates: PropTypes.object.isRequired,
+  dates: PropTypes.array,
 }

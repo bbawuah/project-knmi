@@ -11,10 +11,13 @@ import { NO2LineChart } from '../D3/No2LineChart'
 import { FlightsLineChart } from '../D3/FlightsLineChart'
 import { BarChart } from '../D3/BarChart'
 import no2Data from '../../cities.json'
+import aiportDataJson from '../../airportdata.json'
 import Toggle from 'react-toggle'
 import 'react-toggle/style.css'
 
 export const London = () => {
+  const data = no2Data[1]
+  const aiportData = aiportDataJson[1]
   const [checked, setChecked] = useState(false)
 
   return (
@@ -28,7 +31,7 @@ export const London = () => {
                   return (
                     <div className="title">
                       <Trail
-                        title="London"
+                        title={data.city}
                         color="#F70123"
                         isVisible={isVisible}
                       />
@@ -71,12 +74,13 @@ export const London = () => {
                 <strong>Maatregelen in London</strong>
               </Paragraph>
               <ul>
-                <li>
-                  <Paragraph>
-                    Reis niet naar het buitenland en boek niet voor de periode
-                    tot medio maart
-                  </Paragraph>
-                </li>
+                {data.measures.map((measure, index) => {
+                  return (
+                    <li key={index}>
+                      <Paragraph>{measure.description}</Paragraph>
+                    </li>
+                  )
+                })}
               </ul>
             </article>
             <div className="cities-page-info-box-right-container">
@@ -95,12 +99,19 @@ export const London = () => {
                     2020: <strong>4.242</strong>
                   </Paragraph>
                 </div>
-                <BarChart />
+                <BarChart data={aiportData} />
               </InformationBox>
             </div>
           </section>
           <section className="cities-page-map">
-            <Map coordinates={coordinates.airports[1]} zoomLevel={10} />
+            <Map
+              coordinates={coordinates.airports[1]}
+              zoomLevel={10}
+              dates={[
+                `${!checked ? '2019' : '2020'}-0${data.monthOfMeasures}-01`,
+                `${!checked ? '2019' : '2020'}-0${data.monthOfMeasures}-28`,
+              ]}
+            />
             <div className="slider-container">
               <span>2019</span>
               <Toggle

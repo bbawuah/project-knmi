@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
 import { Subtitle } from '../../../src/Typography/Subtitle'
 import { Paragraph } from '../../Typography/Paragraph'
 import { InformationBox } from '../InformationBox'
@@ -14,6 +14,7 @@ import 'react-toggle/style.css'
 
 function CompareAirportsPage() {
   const [checked, setChecked] = useState(false)
+  const [month, setMonth] = useState('01')
 
   return (
     <section className="compare-page-container">
@@ -66,11 +67,22 @@ function CompareAirportsPage() {
         <section className="multiple-charts">
           {coordinates.airports.map((item, index) => {
             return (
-              <div key={index} className="map-container">
+              <div key={index} className="map-wrapper">
                 <Paragraph>
                   <strong>{item.city}</strong>
+                  {month}
                 </Paragraph>
-                <Map coordinates={item} zoomLevel={8} />
+
+                <div className="map-container">
+                  <Map
+                    coordinates={item}
+                    zoomLevel={8}
+                    dates={[
+                      `${!checked ? '2019' : '2020'}-${month}-01`,
+                      `${!checked ? '2019' : '2020'}-${month}-28`,
+                    ]}
+                  />
+                </div>
               </div>
             )
           })}
@@ -81,19 +93,23 @@ function CompareAirportsPage() {
               <strong>Kies een maand:</strong>
             </Paragraph>
           </label>
-          <select id="months">
-            <option value="Januari">Januari</option>
-            <option value="Febuari">Febuari</option>
-            <option value="Maart">Maart</option>
-            <option value="April">April</option>
-            <option value="Mei">Mei</option>
-            <option value="Juni">Juni</option>
-            <option value="Juli">Juli</option>
-            <option value="Augustus">Augustus</option>
-            <option value="September">September</option>
-            <option value="Oktober">Oktober</option>
-            <option value="November">November</option>
-            <option value="December">December</option>
+          <select
+            id="months"
+            value={month}
+            onChange={(e) => setMonth(e.target.value)}
+          >
+            <option value="01">Januari</option>
+            <option value="02">Febuari</option>
+            <option value="03">Maart</option>
+            <option value="04">April</option>
+            <option value="05">Mei</option>
+            <option value="06">Juni</option>
+            <option value="07">Juli</option>
+            <option value="08">Augustus</option>
+            <option value="09">September</option>
+            <option value="10">Oktober</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
           </select>
           <Paragraph>
             <strong>Kies een jaar:</strong>
