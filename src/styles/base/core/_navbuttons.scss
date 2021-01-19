@@ -1,5 +1,5 @@
 .NavButtons {
-  background: $navbutton;
+  background: none;
   border-radius: 0px 0px 8px 8px;
   border: none;
   color: $white;
@@ -26,5 +26,9 @@
   ul {
     display: flex;
     list-style-type: none;
+    li {
+      border-radius: 0px 0px 8px 8px;
+      margin-left: 2px;
+    }
   }
 }

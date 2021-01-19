@@ -25,16 +25,36 @@ const App = () => {
       <CompareAirportsPage />
       <nav className="cities-menu">
         <ul>
-          <li onClick={() => setCity('amsterdam')}>
+          <li
+            style={{
+              backgroundColor: city === 'amsterdam' ? '#003e1f' : '#73ba9b',
+            }}
+            onClick={() => setCity('amsterdam')}
+          >
             <NavButtons>Amsterdam</NavButtons>
           </li>
-          <li onClick={() => setCity('london')}>
+          <li
+            style={{
+              backgroundColor: city === 'london' ? '#003e1f' : '#73ba9b',
+            }}
+            onClick={() => setCity('london')}
+          >
             <NavButtons>Londen</NavButtons>
           </li>
-          <li onClick={() => setCity('rome')}>
+          <li
+            style={{
+              backgroundColor: city === 'rome' ? '#003e1f' : '#73ba9b',
+            }}
+            onClick={() => setCity('rome')}
+          >
             <NavButtons>Rome</NavButtons>
           </li>
-          <li onClick={() => setCity('madrid')}>
+          <li
+            style={{
+              backgroundColor: city === 'madrid' ? '#003e1f' : '#73ba9b',
+            }}
+            onClick={() => setCity('madrid')}
+          >
             <NavButtons>Madrid</NavButtons>
           </li>
         </ul>
