@@ -52,7 +52,7 @@ export const Map = ({ coordinates }) => {
       className="small-map"
       id="google-map"
       ref={googleMapRef}
-      style={{ height: '100%', width: '100%' }}
+      style={{ height: '17rem', width: '100%' }}
     />
   )
 }
