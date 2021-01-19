@@ -33,7 +33,7 @@ export const Map = ({ coordinates }) => {
         lng: coordinates.longitude,
         lat: coordinates.latitude,
       },
-      zoom: 6,
+      zoom: 5,
     })
 
     const tileSource = new ee.layers.EarthEngineTileSource({
@@ -42,9 +42,6 @@ export const Map = ({ coordinates }) => {
 
     const overlay = new ee.layers.ImageOverlay(tileSource)
     embeddedMap.overlayMapTypes.push(overlay)
-
-    var opacity = 0.5
-    const layer = new ee.addLayer(mapid, null, null, null, opacity)
   }
 
   return (
@@ -52,7 +49,7 @@ export const Map = ({ coordinates }) => {
       className="small-map"
       id="google-map"
       ref={googleMapRef}
-      style={{ height: '17rem', width: '100%' }}
+      style={{ height: '100%', width: '100%' }}
     />
   )
 }
