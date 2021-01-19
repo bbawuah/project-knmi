@@ -86,17 +86,25 @@ export const Rome = () => {
             <div className="cities-page-info-box-right-container">
               <InformationBox backgroundColor="red">
                 <div>
-                  <Subtitle>TITLE</Subtitle>
+                  <Subtitle>Vluchten</Subtitle>
                   <Paragraph>
-                    De Vliegtuigbewegingen van Schiphol zijn in 2020 met{' '}
-                    <strong>89,9% gedaald</strong> ten opzichte van 2019
+                    De Vliegtuigbewegingen van Roma-Fiomucio zijn in 2020 met{' '}
+                    <strong>
+                      {100 -
+                        Math.floor(
+                          (aiportData.quarters[1] / aiportData.quarters[0]) *
+                            100
+                        )}
+                      % gedaald
+                    </strong>{' '}
+                    ten opzichte van 2019
                   </Paragraph>
 
                   <Paragraph>
-                    2019:<strong> 41.892</strong>
+                    2019:<strong> {aiportData.quarters[0]}</strong>
                   </Paragraph>
                   <Paragraph>
-                    2020: <strong>4.242</strong>
+                    2020: <strong>{aiportData.quarters[1]}</strong>
                   </Paragraph>
                 </div>
                 <BarChart data={aiportData} />
