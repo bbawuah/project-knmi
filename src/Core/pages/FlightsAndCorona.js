@@ -127,57 +127,6 @@ function FlightsAndCorona() {
           }}
         </VisibilitySensor>
       </div>
-      <VisibilitySensor once partialVisibility>
-        {({ isVisible }) => {
-          return (
-            <div className="persons-and-years">
-              <div className="person-container">
-                {redPersonCount.map((item, index) => {
-                  if (item == 'green') {
-                    return (
-                      <Spring
-                        key={index}
-                        delay={110 * index}
-                        to={{
-                          opacity: isVisible ? 1 : 0,
-                          transform: isVisible
-                            ? 'translateY(0)'
-                            : 'translateY(100px)',
-                        }}
-                      >
-                        {(props) => <GreenPersonImage styling={{ ...props }} />}
-                      </Spring>
-                    )
-                  } else {
-                    return (
-                      <Spring
-                        key={index}
-                        delay={110 * index}
-                        to={{
-                          opacity: isVisible ? 1 : 0,
-                          transform: isVisible
-                            ? 'translateY(0)'
-                            : 'translateY(100px)',
-                        }}
-                      >
-                        {(props) => <RedPersonImage styling={{ ...props }} />}
-                      </Spring>
-                    )
-                  }
-                })}
-              </div>
-              <div className="year-container">
-                <Subtitle>
-                  <span className="blue">2019</span>
-                </Subtitle>
-                <Subtitle>
-                  <span className="red">2020</span>
-                </Subtitle>
-              </div>
-            </div>
-          )
-        }}
-      </VisibilitySensor>
     </section>
   )
 }
