@@ -1,0 +1,78 @@
+[
+  {
+    "city": "NL",
+    "measures": [
+      {
+        "date": "31-03-2020",
+        "description": "Premier Rutte adviseert iedereen om geen plannen te maken voor deze vakantie, want ook reizen wordt nog steeds afgeraden."
+      },
+      {
+        "date": "12-03-2020",
+        "description": "Mensen in heel Nederland wordt opgeroepen zoveel mogelijk thuis te werken of de werktijden te spreiden."
+      },
+      {
+        "date": "15-03-2020",
+        "description": "All bars, cafes, restaurants, sports clubs, gyms, saunas, sex clubs and coffee shops to close until 6th April. Takeaway/meal deliveries remain permitted. Coffee shops allowed to do collective orders."
+      }
+    ],
+    "dateOfLockdown": null
+  },
+  {
+    "city": "UK",
+    "measures": [
+      {
+        "date": "21-03-2020",
+        "description": "The following businesses are to remain closed until further notice: Public houses, Cinemas, Theatres, Nightclubs, Bingo halls, Concert halls, Museums and galleries, Casinos, Betting shops, Spas, Massage parlours, Indoor skating rinks, Indoor fitness studios, gyms, swimming pools or other indoor leisure centres"
+      },
+      {
+        "date": "24-03-2020",
+        "description": "General lockdown in UK of immediate effect. People are only permitted to leave home for 3 reasons: shoppig for basic necessities as infrequently as possible, one for of exercise a day (alone or with members of your household), any medical need, and travelling to and from work but only where this is absolutely necessary and cannot be done at home. "
+      },
+      {
+        "date": "24-03-2020",
+        "description": "Closure of all businesses and shops selling non-essential goods, and all public and cultural places."
+      }
+    ],
+    "dateOfLockdown": "24-03-2020"
+  },
+  {
+    "city": "ITA",
+    "measures": [
+      {
+        "date": "31-01-2020",
+        "description": "International flights suspension"
+      },
+      {
+        "date": "23-02-2020",
+        "description": "State guidance: All regions at risk (specifically defined) are required to take measures that reduce the spread of the infection, up to full lock-down, including closure of non-essential production and travel restrictions"
+      },
+      {
+        "date": "08-03-2020",
+        "description": "General lockdown across component of everyday life; businesses can continue if they implement safety measures"
+      },
+      {
+        "date": "09-03-2020",
+        "description": "Border closure Entry of Italy banned, apart for essential reasons "
+      }
+    ],
+    "dateOfLockdown": "08-03-2020"
+  },
+  {
+    "city": "SP",
+    "measures": [
+      {
+        "date": "09-03-2020",
+        "description": "Businesses to shift to digital wherever possible"
+      },
+      {
+        "date": "13-03-2020",
+        "description": "Full lockdown - Some villages"
+      },
+      {
+        "date": "09-03-2020",
+        "description": "Vulnerable people and people with symptoms asked to remain at home"
+      }
+    ],
+    "dateOfLockdown": "13-03-2020"
+  }
+]

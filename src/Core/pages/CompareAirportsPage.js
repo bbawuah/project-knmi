@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Subtitle } from '../../../src/Typography/Subtitle'
 import { Paragraph } from '../../Typography/Paragraph'
 import { InformationBox } from '../InformationBox'
@@ -9,8 +9,12 @@ import { TextContainer } from '../TextContainer'
 import coordinates from './../../../public/assets/coordinates.json'
 import { FlightsLineChart } from '../D3/FlightsLineChart'
 import { BarChart } from '../D3/BarChart'
+import Toggle from 'react-toggle'
+import 'react-toggle/style.css'
 
 function CompareAirportsPage() {
+  const [checked, setChecked] = useState(false)
+
   return (
     <section className="compare-page-container">
       <section className="compare-page-content">
@@ -67,28 +71,44 @@ function CompareAirportsPage() {
                   <strong>{item.city}</strong>
                 </Paragraph>
                 <Map coordinates={item} zoomLevel={8} />
-
-                <label htmlFor="months">
-                  <Paragraph>Kies een maand:</Paragraph>
-                </label>
-                <select id="months">
-                  <option value="Januari">Januari</option>
-                  <option value="Febuari">Febuari</option>
-                  <option value="Maart">Maart</option>
-                  <option value="April">April</option>
-                  <option value="Mei">Mei</option>
-                  <option value="Juni">Juni</option>
-                  <option value="Juli">Juli</option>
-                  <option value="Augustus">Augustus</option>
-                  <option value="September">September</option>
-                  <option value="Oktober">Oktober</option>
-                  <option value="November">November</option>
-                  <option value="December">December</option>
-                </select>
               </div>
             )
           })}
         </section>
+        <div className="date-dropdown">
+          <label htmlFor="months">
+            <Paragraph>
+              <strong>Kies een maand:</strong>
+            </Paragraph>
+          </label>
+          <select id="months">
+            <option value="Januari">Januari</option>
+            <option value="Febuari">Febuari</option>
+            <option value="Maart">Maart</option>
+            <option value="April">April</option>
+            <option value="Mei">Mei</option>
+            <option value="Juni">Juni</option>
+            <option value="Juli">Juli</option>
+            <option value="Augustus">Augustus</option>
+            <option value="September">September</option>
+            <option value="Oktober">Oktober</option>
+            <option value="November">November</option>
+            <option value="December">December</option>
+          </select>
+          <Paragraph>
+            <strong>Kies een jaar:</strong>
+          </Paragraph>
+
+          <div className="slider-container">
+            <span>2019</span>
+            <Toggle
+              defaultChecked={checked}
+              icons={false}
+              onChange={() => setChecked(!checked)}
+            />
+            <span>2020</span>
+          </div>
+        </div>
       </section>
     </section>
   )
