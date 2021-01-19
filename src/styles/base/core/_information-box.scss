@@ -40,3 +40,13 @@
     }
   }
 }
+
+.cities-page-info-box-right-container {
+  .info-box {
+    display: flex;
+    max-width: none;
+    p {
+      padding-right: 2rem;
+    }
+  }
+}
