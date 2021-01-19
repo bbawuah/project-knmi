@@ -12,24 +12,9 @@ import {
   easeLinear,
 } from 'd3'
 
-export const NO2LineChart = () => {
+export const NO2LineChart = ({ data }) => {
   const svgRef = useRef()
   const months = ['Jan', 'Feb', 'Mrt', 'Apr', 'Mei', 'Jun']
-
-  const cities = {
-    measures: ['Maatregelen'],
-    dateOfMeasures: '3 Februari',
-    data: [
-      {
-        year: 'post covid',
-        value: [45.5, 47.3, 33.8, 38.9, 30.9, 25.9],
-      },
-      {
-        year: 'covid',
-        value: [34.0, 28.0, 25.8, 24.2, 19.8, 19.9],
-      },
-    ],
-  }
 
   const width = 700,
     height = 500
@@ -59,10 +44,10 @@ export const NO2LineChart = () => {
       .y(yScale)
       .curve(curveCardinal)
 
-    const tooltipLine = svg.append('line').style('stroke-dasharray', '7, 7')
+    const verticleLine = svg.append('line').style('stroke-dasharray', '7, 7')
 
     const color = scaleOrdinal(schemeCategory10)
-      .domain(cities.data.map((city) => city.year))
+      .domain(data.data.map((city) => city.year))
       .range(['#F70123', '#003E1F'])
 
     /* 
@@ -76,18 +61,55 @@ export const NO2LineChart = () => {
       We moeten de dag delen door 30 en de uitkomsten optellen 
       met de stap
       */
-    tooltipLine
+    verticleLine
       .attr('stroke', 'lightgray')
-      .attr('x1', xScale(1) + 50)
-      .attr('x2', xScale(1) + 50)
+      .attr(
+        'x1',
+        xScale(data.monthOfMeasures - 1 + data.dayOfMeasures / 30) + 50
+      )
+      .attr(
+        'x2',
+        xScale(data.monthOfMeasures - 1 + data.dayOfMeasures / 30) + 50
+      )
       .attr('y1', 50)
       .attr('y2', height - 20)
+
+    if (data.hadLockdown) {
+      const lockdownLine = svg.append('line').style('stroke-dasharray', '7, 7')
+      lockdownLine
+        .attr('stroke', '#2C3239')
+        .attr(
+          'x1',
+          xScale(data.monthOfLockdown - 1 + data.dayOfLockdown / 30) + 50
+        )
+        .attr(
+          'x2',
+          xScale(data.monthOfLockdown - 1 + data.dayOfLockdown / 30) + 50
+        )
+        .attr('y1', 120)
+        .attr('y2', height - 20)
+
+      svg
+        .append('text')
+        .attr('y', 130) //magic number here
+        .attr('x', function () {
+          return (
+            xScale(data.monthOfLockdown - 1 + data.dayOfLockdown / 30 + 0.1) +
+            50
+          )
+        })
+        .attr('text-anchor', 'begin')
+        .attr('class', 'test')
+        .text('Ingang lockdown')
+    }
 
     svg
       .append('text')
       .attr('y', 60) //magic number here
       .attr('x', function () {
-        return xScale(1.1) + 50
+        return (
+          xScale(data.monthOfMeasures - 1 + data.dayOfMeasures / 30 + 0.1) + 50
+        )
       })
       .attr('text-anchor', 'begin')
       .attr('class', 'test')
@@ -95,14 +117,14 @@ export const NO2LineChart = () => {
 
     svg
       .selectAll('.line')
-      .data([cities.data[0], cities.data[1]])
+      .data([data.data[0], data.data[1]])
       .join('path')
       .attr('class', 'line')
       .attr('d', ({ value }) => myLine(value))
       .attr('fill', 'none')
       .attr('stroke', (value) => color(value.year))
       .style('transform', 'translate(50px, -20px)')
-  }, [cities])
+  }, [data])
 
   return (
     <div className="line-chart-container">
@@ -126,5 +148,5 @@ export const NO2LineChart = () => {
 }
 
 NO2LineChart.propTypes = {
-  data: PropTypes.array,
+  data: PropTypes.object,
 }

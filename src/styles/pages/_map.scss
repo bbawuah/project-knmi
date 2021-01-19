@@ -1,8 +1,10 @@
-.map-container {
+.map-wrapper {
   width: 24%;
-  height: 100%;
-}
+  .map-container {
+    height: 300px;
+  }
 
-.gmnoprint {
-  display: none;
+  .gmnoprint {
+    display: none;
+  }
 }
