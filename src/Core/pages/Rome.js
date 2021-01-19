@@ -11,6 +11,7 @@ import { NO2LineChart } from '../D3/No2LineChart'
 import { FlightsLineChart } from '../D3/FlightsLineChart'
 import { BarChart } from '../D3/BarChart'
 import Toggle from 'react-toggle'
+import no2Data from '../../cities.json'
 import 'react-toggle/style.css'
 
 export const Rome = () => {
@@ -61,7 +62,7 @@ export const Rome = () => {
                 <Paragraph>2020: 4.242</Paragraph>
               </InformationBox>
             </div>
-            <NO2LineChart />
+            <NO2LineChart data={no2Data[3]} />
           </div>
           <section className="cities-page-measures-section">
             <article>

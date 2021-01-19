@@ -12,21 +12,22 @@ import {
   easeLinear,
 } from 'd3'
 
-export const NO2LineChart = () => {
+export const NO2LineChart = ({ data }) => {
   const svgRef = useRef()
   const months = ['Jan', 'Feb', 'Mrt', 'Apr', 'Mei', 'Jun']
 
   const cities = {
     measures: ['Maatregelen'],
-    dateOfMeasures: '3 Februari',
+    monthOfMeasures: 3,
+    dayOfMeasures: 12,
     data: [
       {
         year: 'post covid',
-        value: [45.5, 47.3, 33.8, 38.9, 30.9, 25.9],
+        value: [40.39, 54.19, 37.67, 30.49, 28.13, 32.3],
       },
       {
         year: 'covid',
-        value: [34.0, 28.0, 25.8, 24.2, 19.8, 19.9],
+        value: [39.55, 31.16, 26.59, 24.17, 21.1, 25.12],
       },
     ],
   }
@@ -62,7 +63,7 @@ export const NO2LineChart = () => {
     const tooltipLine = svg.append('line').style('stroke-dasharray', '7, 7')
 
     const color = scaleOrdinal(schemeCategory10)
-      .domain(cities.data.map((city) => city.year))
+      .domain(data.data.map((city) => city.year))
       .range(['#F70123', '#003E1F'])
 
     /* 
@@ -95,14 +96,14 @@ export const NO2LineChart = () => {
 
     svg
       .selectAll('.line')
-      .data([cities.data[0], cities.data[1]])
+      .data([data.data[0], data.data[1]])
       .join('path')
       .attr('class', 'line')
       .attr('d', ({ value }) => myLine(value))
       .attr('fill', 'none')
       .attr('stroke', (value) => color(value.year))
       .style('transform', 'translate(50px, -20px)')
-  }, [cities])
+  }, [data])
 
   return (
     <div className="line-chart-container">
@@ -126,5 +127,5 @@ export const NO2LineChart = () => {
 }
 
 NO2LineChart.propTypes = {
-  data: PropTypes.array,
+  data: PropTypes.objects,
 }

@@ -10,6 +10,7 @@ import coordinates from '../../../public/assets/coordinates.json'
 import { NO2LineChart } from '../D3/No2LineChart'
 import { FlightsLineChart } from '../D3/FlightsLineChart'
 import { BarChart } from '../D3/BarChart'
+import no2Data from '../../cities.json'
 import Toggle from 'react-toggle'
 import 'react-toggle/style.css'
 
@@ -62,7 +63,7 @@ export const London = () => {
                 <Paragraph>2020: 4.242</Paragraph>
               </InformationBox>
             </div>
-            <NO2LineChart />
+            <NO2LineChart data={no2Data[1]} />
           </div>
           <section className="cities-page-measures-section">
             <article>
