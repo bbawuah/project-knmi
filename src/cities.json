@@ -1,14 +1,19 @@
 {
   "cities": [
     {
+      "city": "Amsterdam",
       "measures": ["Maatregelen"],
       "dateOfMeasures": "3 Februari",
       "data": [
-        { "year": "post covid", "value": [32.7, 45.3, 26.6, 24.7, 21, 22.7] },
-        { "year": "covid", "value": [22.92, 16.45, 19.92, 24.35, 50, 20.74] }
+        {
+          "year": "post covid",
+          "value": [25.76, 35.21, 15.53, 20.49, 18.26, 16.93]
+        },
+        { "year": "covid", "value": [21.75, 12.12, 13.49, 14.38, 11.17, 11.81] }
       ]
     },
     {
+      "city": "Londen",
       "measures": ["Maatregelen"],
       "dateOfMeasures": "3 Februari",
       "data": [
@@ -23,6 +28,7 @@
       ]
     },
     {
+      "city": "Rome",
       "measures": ["Maatregelen"],
       "dateOfMeasures": "3 Februari",
       "data": [
@@ -33,6 +39,21 @@
         {
           "year": "covid",
           "value": [47.1, 45.4, 23.0, 12.2, 12.9, 16.6]
+        }
+      ]
+    },
+    {
+      "city": "Madrid",
+      "measures": ["Maatregelen"],
+      "dateOfMeasures": "3 Februari",
+      "data": [
+        {
+          "year": "post covid",
+          "value": [47.6, 46.9, 42.2, 39.4, 31.7, 35.8]
+        },
+        {
+          "year": "covid",
+          "value": [45.6, 44.6, 25.4, 17.9, 19.9, 23.2]
         }
       ]
     }
