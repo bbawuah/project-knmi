@@ -58,6 +58,18 @@ export const Amsterdam = () => {
             ></img>
           </div>
           <div className="cities-page-line-chart-container">
+            <div className="cities-page-info-box-left-container">
+              <InformationBox backgroundColor="green">
+                <Subtitle>GROOTSTE DALING OOIT?</Subtitle>
+                <Paragraph>
+                  Van 6.1 miljoen passagiers in april 2019 heeft Schiphol er in
+                  dezelfde periode in 2020 er een karige 127.000
+                </Paragraph>
+
+                <Paragraph>2019: 41.892</Paragraph>
+                <Paragraph>2020: 4.242</Paragraph>
+              </InformationBox>
+            </div>
             <NO2LineChart data={data} />
           </div>
           <section className="cities-page-measures-section">

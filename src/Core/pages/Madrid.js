@@ -35,7 +35,7 @@ export const Madrid = () => {
                         color="#F70123"
                         isVisible={isVisible}
                       />
-                      <Subtitle>Adolfo Suarez Madrid-Barajas</Subtitle>
+                      <Subtitle>Madrid-Barajas</Subtitle>
                     </div>
                   )
                 }}
