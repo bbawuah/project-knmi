@@ -47,16 +47,10 @@ function CompareAirportsPage() {
               uitkomt? Lees dan snel verder!
             </Paragraph>
           </div>
-          <InformationBox backgroundColor="red">
-            <Subtitle>TITLE</Subtitle>
-            <Paragraph>
-              De Vliegtuigbewegingen van Schiphol zijn in 2020 met 89,9% gedaald
-              ten opzichte van 2019
-            </Paragraph>
-
-            <Paragraph>2019: 41.892</Paragraph>
-            <Paragraph>2020: 4.242</Paragraph>
-          </InformationBox>
+          <img
+            className="compare-illustration"
+            src="./assets/koffers.svg"
+          ></img>
         </div>
 
         <section className="compare-chart">
