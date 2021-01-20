@@ -79,6 +79,14 @@
   .map-wrapper {
     margin-right: 1rem;
   }
+  div
+    .compare-page-container
+    .compare-page-content
+    .text-section
+    .compare-illustration {
+    margin-top: 0;
+    width: 500px;
+  }
 }
 
 @media (max-width: 1086px) {

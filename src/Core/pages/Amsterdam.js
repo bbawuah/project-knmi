@@ -43,12 +43,15 @@ export const Amsterdam = () => {
               </VisibilitySensor>
               <div>
                 <Paragraph>
-                  Vanaf 3 maart tot april was er een intelligente lockdown in
-                  Nederland. Men moest zoveel mogelijk proberen thuis te blijven
-                  en niet naar buitenland reizen. Voor rezigers vanuit het
-                  buitenland geldt het dringende advies om niet naar Nederland
-                  te reizen tenzij het noodzakelijk is. Dit heeft natuurlijk
-                  enorme gevolgen voor het luchtverkeer.
+                  Schiphol is de nummer 3 in grootste luchthaven van Europa. Dit
+                  betekend dat er dagelijks enorm veel vluchten aankomen en
+                  vertrekken. Schiphol heeft veel last van het Corona virus. Zo
+                  heeft Schiphol in april 2019, 6.1 miljoen passagiers en in
+                  dezelfde periode in 2020 een karige 127.000. Voor reizigers
+                  vanuit het buitenland geldt het dringende advies om niet naar
+                  Nederland te reizen tenzij het noodzakelijk is. Dit heeft
+                  natuurlijk enorme gevolgen voor het luchtverkeer maar wat
+                  heeft dit voor gevolgen voor de hoeveelheid NO2?
                 </Paragraph>
               </div>
             </div>
