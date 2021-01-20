@@ -42,11 +42,13 @@ export const Rome = () => {
               </VisibilitySensor>
               <div>
                 <Paragraph>
-                  Italië heeft de Corona pandemie zeker gevoeld… Vanaf 8 maart
-                  tot april was er een strenge lockdown in geheel Italië.
-                  Inwoners mochten amper naar buiten toe, laat staan naar het
-                  buitenland. Wat zal dit voor gevolgen hebben op het NO2
-                  gehalte rondom de hoofdstad Rome?
+                  De pandemie brak als eerst in alle hevigheid uit in Italië.
+                  Andere landen keken toe en hoopte dat het virus de grens niet
+                  zal bereiken. Italië ging al snel over tot heftige
+                  maatregelen. Vanaf 8 maart was er een strenge lockdown in
+                  geheel Italië. Inwoners mochten amper naar buiten toe, laat
+                  staan naar het buitenland. Wat zal dit voor gevolgen hebben op
+                  het NO2 gehalte rondom de hoofdstad Rome?
                 </Paragraph>
               </div>
             </div>
