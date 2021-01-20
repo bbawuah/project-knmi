@@ -59,11 +59,11 @@ function CompareAirportsPage() {
         </section>
         <div className="multiple-compare-charts">
           <Paragraph>
-            <strong>
-              Hieronder zie je de verspreiding en hoeveel van de NO2 in de
-              lucht. Met gebruik van de filters kan je filteren op maand en
-              jaar.
-            </strong>
+            <strong>Tropomi </strong>
+          </Paragraph>
+          <Paragraph>
+            Hieronder zie je de verspreiding en hoeveel van de NO2 in de lucht.
+            Met gebruik van de filters kan je filteren op maand en jaar.{' '}
           </Paragraph>
           <section className="multiple-charts">
             {coordinates.airports.map((item, index) => {

@@ -106,12 +106,13 @@ export const Amsterdam = () => {
           </section>
           <div>
             <Paragraph>
-              <strong>
-                Hieronder zie je de verspreiding en hoeveel van de NO2 in de
-                lucht. De periode die hier wordt getoond is de maand waarin de
-                maatregelen in gang zijn gegaan. Met behulp van de filterknop
-                onderaan de pagina kan je filteren tussen 2019 en 2020.
-              </strong>
+              <strong>Tropomi </strong>
+            </Paragraph>
+            <Paragraph>
+              Hieronder zie je de verspreiding en hoeveel van de NO2 in de
+              lucht. De periode die hier wordt getoond is de maand waarin de
+              maatregelen in gang zijn gegaan. Met behulp van de filterknop
+              onderaan de pagina kan je filteren tussen 2019 en 2020.{' '}
             </Paragraph>
             <section className="cities-page-map">
               <Map

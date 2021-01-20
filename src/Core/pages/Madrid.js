@@ -42,12 +42,13 @@ export const Madrid = () => {
               </VisibilitySensor>
               <div>
                 <Paragraph>
-                  Vanaf 3 maart tot april was er een intelligente lockdown in
-                  Nederland. Men moest zoveel mogelijk proberen thuis te blijven
-                  en niet naar buitenland reizen. Voor rezigers vanuit het
-                  buitenland geldt het dringende advies om niet naar Nederland
-                  te reizen tenzij het noodzakelijk is. Dit heeft natuurlijk
-                  enorme gevolgen voor het luchtverkeer.
+                  Spanjaarden zitten sinds 14 maart thuis, uitgezonderd diegenen
+                  die een essentieel beroep uitoefenen. Mensen mogen alleen de
+                  straat op om eten te kopen of voor een medisch consult. Mensen
+                  mochten niet meer vrij door het land reizen nadat de
+                  maatregelen officieel zijn gepubliceerd. De regering heeft de
+                  buitengrenzen en vliegvelden niet gesloten maar het vervoer
+                  werd wel gehalveerd.
                 </Paragraph>
               </div>
             </div>
@@ -104,12 +105,13 @@ export const Madrid = () => {
 
           <div>
             <Paragraph>
-              <strong>
-                Hieronder zie je de verspreiding en hoeveel van de NO2 in de
-                lucht. De periode die hier wordt getoond is de maand waarin de
-                maatregelen in gang zijn gegaan. Met behulp van de filterknop
-                onderaan de pagina kan je filteren tussen 2019 en 2020.{' '}
-              </strong>
+              <strong>Tropomi </strong>
+            </Paragraph>
+            <Paragraph>
+              Hieronder zie je de verspreiding en hoeveel van de NO2 in de
+              lucht. De periode die hier wordt getoond is de maand waarin de
+              maatregelen in gang zijn gegaan. Met behulp van de filterknop
+              onderaan de pagina kan je filteren tussen 2019 en 2020.{' '}
             </Paragraph>
             <section className="cities-page-map">
               <Map
