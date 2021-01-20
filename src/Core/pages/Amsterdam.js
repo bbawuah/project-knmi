@@ -55,10 +55,10 @@ export const Amsterdam = () => {
           <div className="cities-page-line-chart-container">
             <div className="cities-page-info-box-left-container">
               <InformationBox backgroundColor="green">
-                <Subtitle>TITLE</Subtitle>
+                <Subtitle>GROOTSTE DALING OOIT?</Subtitle>
                 <Paragraph>
-                  De Vliegtuigbewegingen van Schiphol zijn in 2020 met 89,9%
-                  gedaald ten opzichte van 2019
+                  Van 6.1 miljoen passagiers in april 2019 heeft Schiphol er in
+                  dezelfde periode in 2020 er een karige 127.000
                 </Paragraph>
 
                 <Paragraph>2019: 41.892</Paragraph>

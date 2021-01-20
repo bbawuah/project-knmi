@@ -31,7 +31,7 @@ export const Madrid = () => {
                         color="#F70123"
                         isVisible={isVisible}
                       />
-                      <Subtitle>Schiphol</Subtitle>
+                      <Subtitle>Madrid-Barajas</Subtitle>
                     </div>
                   )
                 }}
