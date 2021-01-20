@@ -9,7 +9,7 @@
 
     .compare-chart {
       font-family: 'Raleway', sans-serif;
-      overflow-x: auto;
+      overflow-x: none;
       h3 {
         margin: 1rem 0;
       }
@@ -75,6 +75,10 @@
 @media (max-width: 1190px) {
   div .compare-page-container .compare-page-content .multiple-charts {
     justify-content: space-evenly;
+  }
+
+  .compare-chart {
+    overflow-x: auto;
   }
   .map-wrapper {
     margin-right: 1rem;

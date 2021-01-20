@@ -2,7 +2,7 @@
   position: relative;
   width: max-content;
   font-family: 'Raleway', sans-serif;
-  overflow-x: auto;
+  overflow-x: none;
   .legenda {
     display: flex;
     flex-direction: column;
@@ -38,5 +38,11 @@
     path {
       stroke-width: 2px;
     }
+  }
+}
+
+@media (max-width: 1190px) {
+  .line-chart-container {
+    overflow-x: auto;
   }
 }
