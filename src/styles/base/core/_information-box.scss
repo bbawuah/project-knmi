@@ -49,8 +49,15 @@
   .info-box {
     display: flex;
     max-width: none;
+    flex-wrap: wrap;
     p {
       padding-right: 2rem;
+    }
+    .bar-chart {
+      padding-top: 1rem;
+    }
+    .bar-chart-container {
+      margin-top: 1rem;
     }
   }
 }

@@ -63,29 +63,37 @@ function CompareAirportsPage() {
           <h3>Luchtverkeer tijdens de lockdown</h3>
           <FlightsLineChart />
         </section>
+        <div className="multiple-compare-charts">
+          <Paragraph>
+            <strong>
+              Hieronder zie je de verspreiding en hoeveel van de NO2 in de
+              lucht. Met gebruik van de filters kan je filteren op maand en
+              jaar.
+            </strong>
+          </Paragraph>
+          <section className="multiple-charts">
+            {coordinates.airports.map((item, index) => {
+              return (
+                <div key={index} className="map-wrapper">
+                  <Paragraph>
+                    <strong>{item.city}</strong>
+                  </Paragraph>
 
-        <section className="multiple-charts">
-          {coordinates.airports.map((item, index) => {
-            return (
-              <div key={index} className="map-wrapper">
-                <Paragraph>
-                  <strong>{item.city}</strong>
-                </Paragraph>
-
-                <div className="map-container">
-                  <Map
-                    coordinates={item}
-                    zoomLevel={8}
-                    dates={[
-                      `${!checked ? '2019' : '2020'}-${month}-01`,
-                      `${!checked ? '2019' : '2020'}-${month}-28`,
-                    ]}
-                  />
+                  <div className="map-container">
+                    <Map
+                      coordinates={item}
+                      zoomLevel={8}
+                      dates={[
+                        `${!checked ? '2019' : '2020'}-${month}-01`,
+                        `${!checked ? '2019' : '2020'}-${month}-28`,
+                      ]}
+                    />
+                  </div>
                 </div>
-              </div>
-            )
-          })}
-        </section>
+              )
+            })}
+          </section>
+        </div>
         <div className="date-dropdown">
           <label htmlFor="months">
             <Paragraph>
@@ -115,13 +123,13 @@ function CompareAirportsPage() {
           </Paragraph>
 
           <div className="slider-container">
-            <span>2019</span>
+            <span className="paragraph">2019</span>
             <Toggle
               defaultChecked={checked}
               icons={false}
               onChange={() => setChecked(!checked)}
             />
-            <span>2020</span>
+            <span className="paragraph">2020</span>
           </div>
         </div>
       </section>

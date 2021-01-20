@@ -99,25 +99,35 @@ export const London = () => {
               </InformationBox>
             </div>
           </section>
-          <section className="cities-page-map">
-            <Map
-              coordinates={coordinates.airports[1]}
-              zoomLevel={10}
-              dates={[
-                `${!checked ? '2019' : '2020'}-0${data.monthOfMeasures}-01`,
-                `${!checked ? '2019' : '2020'}-0${data.monthOfMeasures}-28`,
-              ]}
-            />
-            <div className="slider-container">
-              <span>2019</span>
-              <Toggle
-                defaultChecked={checked}
-                icons={false}
-                onChange={() => setChecked(!checked)}
+          <div>
+            <Paragraph>
+              <strong>
+                Hieronder zie je de verspreiding en hoeveel van de NO2 in de
+                lucht. De periode die hier wordt getoond is de maand waarin de
+                maatregelen in gang zijn gegaan. Met behulp van de filterknop
+                onderaan de pagina kan je filteren tussen 2019 en 2020.{' '}
+              </strong>
+            </Paragraph>
+            <section className="cities-page-map">
+              <Map
+                coordinates={coordinates.airports[1]}
+                zoomLevel={10}
+                dates={[
+                  `${!checked ? '2019' : '2020'}-0${data.monthOfMeasures}-01`,
+                  `${!checked ? '2019' : '2020'}-0${data.monthOfMeasures}-28`,
+                ]}
               />
-              <span>2020</span>
-            </div>
-          </section>
+              <div className="slider-container">
+                <span className="paragraph">2019</span>
+                <Toggle
+                  defaultChecked={checked}
+                  icons={false}
+                  onChange={() => setChecked(!checked)}
+                />
+                <span className="paragraph">2020</span>
+              </div>
+            </section>
+          </div>
         </section>
       </TextContainer>
     </section>

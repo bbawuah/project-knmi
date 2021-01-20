@@ -1,0 +1,33 @@
+// for testing
+#app {
+  overflow-x: hidden;
+}
+
+@media (max-width: 1007px) {
+  // introduction
+  .introduction-container {
+    background-position: left;
+  }
+
+  // What is NO2
+  div .what-is-no2-container .what-is-no2-content .left-section {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 1081px) {
+  // what is the effect of NO2
+  div .what-is-effect-container {
+    padding: 4rem 5rem;
+    .what-is-effect-header-container {
+      align-items: flex-start;
+    }
+    .what-is-effect-illustration {
+      display: none;
+    }
+    .wat-is-effect-text-container {
+      position: unset;
+      padding: 2rem 0;
+    }
+  }
+}
