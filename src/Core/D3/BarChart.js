@@ -10,21 +10,10 @@ import {
   schemeCategory10,
 } from 'd3'
 
-export const BarChart = () => {
+export const BarChart = ({ data }) => {
   const svgRef = useRef()
   const years = ['2019', '2020']
-  const data = [41892, 4242]
 
-  const cities = [
-    {
-      year: 'post covid',
-      data: [25, 30, 45, 60, 20, 65, 75],
-    },
-    {
-      year: 'covid',
-      data: [0, 50, 20, 90, 50, 20, 50],
-    },
-  ]
   const width = 300,
     height = 300
   useEffect(() => {
@@ -35,7 +24,9 @@ export const BarChart = () => {
       .range([0, width - 100])
       .padding(0.2)
 
-    const yScale = scaleLinear().domain([0, 50000]).range([height, 0])
+    const yScale = scaleLinear()
+      .domain([0, data.quarters[0] + 20000])
+      .range([height, 0])
 
     const xAxis = axisBottom(xScale)
       .ticks(years.length)
@@ -55,12 +46,12 @@ export const BarChart = () => {
       .call(yAxis)
 
     const color = scaleOrdinal(schemeCategory10)
-      .domain(data.map((_, index) => index))
+      .domain(data.quarters.map((_, index) => index))
       .range(['#ffffff', '#CAC9C9'])
 
     svg
       .selectAll('.bar')
-      .data(data)
+      .data(data.quarters)
       .join('rect')
       .attr('class', 'bar')
       .attr('x', (value, index) => xScale(index) + 50)
@@ -68,7 +59,7 @@ export const BarChart = () => {
       .attr('width', xScale.bandwidth())
       .attr('fill', (value, index) => color(index))
       .attr('height', (value) => height - yScale(value))
-  }, [cities])
+  }, [data])
 
   return (
     <div className="bar-chart-container">
@@ -89,5 +80,5 @@ export const BarChart = () => {
 }
 
 BarChart.propTypes = {
-  data: PropTypes.array,
+  data: PropTypes.object,
 }
