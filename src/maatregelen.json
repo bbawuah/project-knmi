@@ -22,15 +22,15 @@
     "measures": [
       {
         "date": "21-03-2020",
-        "description": "The following businesses are to remain closed until further notice: Public houses, Cinemas, Theatres, Nightclubs, Bingo halls, Concert halls, Museums and galleries, Casinos, Betting shops, Spas, Massage parlours, Indoor skating rinks, Indoor fitness studios, gyms, swimming pools or other indoor leisure centres"
+        "description": "Sluiting van pubs, bioscoop, theaters, nachtclubs, concertzalen, musea en gallerijen, casino’s, spa’s,  zwembaden en indoor recreate centra’s."
       },
       {
         "date": "24-03-2020",
-        "description": "General lockdown in UK of immediate effect. People are only permitted to leave home for 3 reasons: shoppig for basic necessities as infrequently as possible, one for of exercise a day (alone or with members of your household), any medical need, and travelling to and from work but only where this is absolutely necessary and cannot be done at home. "
+        "description": "Gehele lockdown in verenigd konikrijk alleen noodzakkelijke reizen."
       },
       {
         "date": "24-03-2020",
-        "description": "Closure of all businesses and shops selling non-essential goods, and all public and cultural places."
+        "description": "Kantoren worden gesloten en thuiswerken wordt toegepast waar mogenlijk. Dit betekend ook geen zakelijke reizen meer."
       }
     ],
     "dateOfLockdown": "24-03-2020"
