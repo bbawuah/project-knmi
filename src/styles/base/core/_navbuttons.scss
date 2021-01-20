@@ -25,9 +25,17 @@
     display: flex;
     border-radius: 0 0 8px 8px;
     list-style-type: none;
+    flex-wrap: wrap;
     li {
       border-radius: 0px 0px 8px 8px;
       margin-left: 2px;
+      margin-bottom: 0.2rem;
     }
+  }
+}
+
+@media (max-width: 794px) {
+  .cities-page-info-box-right-container .info-box {
+    justify-content: center;
   }
 }
