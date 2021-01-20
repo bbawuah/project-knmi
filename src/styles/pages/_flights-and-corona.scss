@@ -4,7 +4,7 @@
     color: $white;
   }
   .flights-and-corona-wrapper {
-    padding: 4rem 0;
+    padding: 4rem 3rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -71,6 +71,18 @@
     }
     .blue {
       color: #2c323a;
+    }
+  }
+}
+
+@media (max-width: 1176px) {
+  // flights-and-corona
+  div .flights-and-corona {
+    .persons-and-years .year-container {
+      padding: 0rem 0 0rem 0.9rem;
+    }
+    .flights-and-corona-wrapper {
+      justify-content: center;
     }
   }
 }

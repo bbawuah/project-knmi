@@ -3,7 +3,7 @@
   .compare-page-content {
     max-width: 1200px;
     margin: 0 auto;
-    padding-top: 4rem;
+    padding: 4rem 2rem;
     display: flex;
     flex-direction: column;
 
@@ -27,6 +27,13 @@
       justify-content: space-between;
       padding-top: 4rem;
       flex-wrap: wrap;
+      div {
+        max-width: 39rem;
+        padding-bottom: 2rem;
+      }
+    }
+    .multiple-compare-charts {
+      padding-top: 5rem;
     }
 
     .multiple-charts {
@@ -34,7 +41,8 @@
       height: 100%;
       display: flex;
       justify-content: space-between;
-      padding-top: 4rem;
+      flex-wrap: wrap;
+      padding-top: 2rem;
 
       .placeholder {
         height: 14rem;
@@ -56,6 +64,29 @@
       padding: 0.4rem;
       font-family: $paragraph-font;
       margin-bottom: 2rem;
+    }
+  }
+}
+
+@media (max-width: 1190px) {
+  div .compare-page-container .compare-page-content .multiple-charts {
+    justify-content: space-evenly;
+  }
+  .map-wrapper {
+    margin-right: 1rem;
+  }
+}
+
+@media (max-width: 1086px) {
+  div .compare-page-container .compare-page-content {
+    .title {
+      text-align: center;
+    }
+    .trails-main .trails-main-text-container {
+      justify-content: center;
+    }
+    .text-section {
+      justify-content: center;
     }
   }
 }
